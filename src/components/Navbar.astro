@@ -1,0 +1,13 @@
+---
+import menuIcon from "../assets/menu.svg";
+import { Image } from "astro:assets";
+---
+
+<div
+  class="fixed w-full flex justify-between items-center py-2 bg-slate-300/50"
+>
+  <span class="text-base font-black">Rastislav Hepner.</span>
+  <button class="p-4">
+    <Image src={menuIcon} alt="Menu icon" width={32} height={32} />
+  </button>
+</div>
