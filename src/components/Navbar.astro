@@ -43,7 +43,7 @@ import { Image } from "astro:assets";
 
     const isInside = navbar.contains(event.target as Node);
     if (!isInside) {
-      menuContent.classList.toggle("hidden");
+      menuContent.classList.add("hidden");
     }
   });
 </script>
