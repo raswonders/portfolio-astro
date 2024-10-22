@@ -1,0 +1,49 @@
+---
+import menuIcon from "../assets/menu.svg";
+import { Image } from "astro:assets";
+---
+
+<div id="navbar" class="fixed w-full bg-white">
+  <div class="min-h-20 flex justify-between items-center py-2">
+    <span class="text-base font-black p-4">Rastislav Hepner.</span>
+
+    <button id="menu-toggle" class="p-4 lg:hidden">
+      <Image src={menuIcon} alt="Menu icon" width={32} height={32} />
+    </button>
+
+    <menu class="hidden lg:block">
+      <ul class="flex">
+        <li><a class="block p-2" href="#">Home</a></li>
+        <li><a class="block p-2" href="#">About me</a></li>
+        <li><a class="block p-2" href="#">Contact</a></li>
+      </ul>
+    </menu>
+  </div>
+
+  <menu id="menu-content" class="hidden lg:hidden">
+    <ul class="space-y-2">
+      <li><a class="block p-2" href="#">Home</a></li>
+      <li><a class="block p-2" href="#">About me</a></li>
+      <li><a class="block p-2" href="#">Contact</a></li>
+    </ul>
+  </menu>
+</div>
+
+<script>
+  const navbar = document.getElementById("navbar");
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuContent = document.getElementById("menu-content");
+
+  menuToggle?.addEventListener("click", (event) => {
+    menuContent?.classList.toggle("hidden");
+  });
+
+  window.addEventListener("click", (event) => {
+    if (!navbar || !menuContent) return;
+
+    const isInside = navbar.contains(event.target as Node);
+    if (!isInside) {
+      menuContent.classList.add("hidden");
+    }
+  });
+</script>
