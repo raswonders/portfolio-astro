@@ -3,10 +3,13 @@ import Hero from "../components/Hero.astro";
 import Navbar from "../components/Navbar.astro";
 import PlaceholderContent from "../components/PlaceholderContent.astro";
 import Layout from "../layouts/Layout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 ---
 
 <Layout>
   <Navbar />
-  <Hero class="pt-32" />
-  <PlaceholderContent class="pt-32" />
+  <PageLayout>
+    <Hero />
+    <PlaceholderContent />
+  </PageLayout>
 </Layout>
