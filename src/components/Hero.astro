@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import profile from "../assets/profile.webp";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class={`grid gap-8 items-center sm:grid-cols-2 ${className || ""}`}>
+  <h1 class="flex flex-col text-4xl md:text-5xl font-black">
+    <span>Hey, Welcome!</span>
+    <span
+      >I'm Rastislav, <span class="font-sans">Web Developer</span> from Brno</span
+    >
+  </h1>
+  <Image src={profile} alt="Rastislav's profile picture" />
+</div>
