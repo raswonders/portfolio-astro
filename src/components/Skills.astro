@@ -1,0 +1,18 @@
+---
+const skills = [
+  "HTML & CSS",
+  "Javascript",
+  "Typescript",
+  "React",
+  "Tailwindcss",
+  "Vite",
+  "Astro.js",
+];
+---
+
+<section class="flex flex-col items-center space-y-16">
+  <h2 class="text-2xl font-extrabold">Tech Stack</h2>
+  <div class="flex flex-wrap max-w-sm gap-3">
+    {skills.map((item) => <div class="bg-slate-100 px-3 py-1">{item}</div>)}
+  </div>
+</section>
