@@ -3,14 +3,12 @@ import { getCollection, getEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
-  // const entry = await getEntry("projects", "project-1.md");
-  console.log({ projects });
 
   return projects.map((project) => {
-    return { params: { slug: project.slug } };
+    console.log(project);
+    console.log(typeof project);
+    return { params: { id: project.id } };
   });
-
-  // return [{ params: { slug: entry?.slug } }];
 }
 ---
 

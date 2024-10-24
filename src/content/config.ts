@@ -6,8 +6,8 @@ const projects = defineCollection({
     title: z.string()
   }),
   loader: glob({
-    base: "/src/projects",
-    pattern: "*.md"
+    base: "src/content/projects",
+    pattern: "**.md"
   })
 })
 
