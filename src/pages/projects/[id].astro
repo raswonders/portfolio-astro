@@ -1,0 +1,22 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => {
+    console.log(project);
+    return { params: { id: project.id } };
+  });
+}
+
+const project = await getEntry("projects", Astro.params.id);
+
+if (!project) {
+  return;
+}
+
+const { Content } = await render(project);
+---
+
+<Content />

@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const projects = await getCollection("projects");
+
+if (!projects) {
+  return;
+}
+---
+
+<section class="flex flex-col items-center space-y-16">
+  <h2 class="text-2xl font-extrabold">Projects</h2>
+  <div class="grid md:grid-cols-2 gap-x-8 gap-y-8">
+    {
+      projects.map((project) => {
+        const { title, description, cover, coverAlt } = project.data;
+        return (
+          <article class="flex flex-col border">
+            <Image alt={coverAlt} src={cover} width={300} height={200} />
+            <div class="grow flex flex-col space-y-4">
+              <h3 class="text-xl font-semibold">{title}</h3>
+              <p>{description}</p>
+              <a
+                class="text-sm font-medium uppercase"
+                href={`projects/${project.id}`}
+              >
+                Read Story &rarr;
+              </a>
+            </div>
+          </article>
+        );
+      })
+    }
+  </div>
+</section>
