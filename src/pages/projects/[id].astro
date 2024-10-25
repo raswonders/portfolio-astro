@@ -5,6 +5,7 @@ export async function getStaticPaths() {
   const projects = await getCollection("projects");
 
   return projects.map((project) => {
+    console.log(project);
     return { params: { id: project.id } };
   });
 }
