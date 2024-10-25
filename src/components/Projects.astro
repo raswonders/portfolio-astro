@@ -1,23 +1,27 @@
 ---
 import { getCollection } from "astro:content";
-import ProjectCard from "./ProjectCard.astro";
+import { Image } from "astro:assets";
 
 const projects = await getCollection("projects");
 
 if (!projects) {
   return;
 }
-
-console.log(projects);
 ---
 
 <section class="flex flex-col items-center space-y-16">
   <h2 class="text-2xl font-extrabold">Projects</h2>
-  <div class="grid">
+  <div class="grid md:grid-cols-2 gap-x-8 gap-y-16">
     {
       projects.map((project) => {
         const { title, description, cover, coverAlt } = project.data;
-        return <ProjectCard {title} {description} {cover} {coverAlt} />;
+        return (
+          <article class="border">
+            <Image alt={coverAlt} src={cover} width={300} height={200} />
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </article>
+        );
       })
     }
   </div>
