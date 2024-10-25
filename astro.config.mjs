@@ -9,6 +9,6 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
   integrations: [tailwind()],
   server: {port: 3000, host: true},
-  output: "hybrid",
+  output: "static",
   adapter: netlify()
 });
