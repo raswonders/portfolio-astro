@@ -4,12 +4,30 @@ export const prerender = false;
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 import PageLayout from "../layouts/PageLayout.astro";
+
+let formData;
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+
+    formData = {
+      name: data.get("name"),
+      email: data.get("email"),
+      message: data.get("message"),
+    };
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
 ---
 
 <Layout>
   <Navbar />
   <PageLayout>
-    <form class="flex flex-col max-w-2xl" method="POST" action="">
+    <form class="flex flex-col max-w-2xl" method="POST">
       <label for="name">Name</label>
       <input class="border" name="name" id="name" type="text" />
       <label for="email">Email</label>
@@ -19,5 +37,11 @@ import PageLayout from "../layouts/PageLayout.astro";
       ></textarea>
       <input class="bg-black text-white" type="submit" value="Send" />
     </form>
+
+    <ul>
+      <li>{formData?.name}</li>
+      <li>{formData?.email}</li>
+      <li>{formData?.message}</li>
+    </ul>
   </PageLayout>
 </Layout>
