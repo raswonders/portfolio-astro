@@ -27,6 +27,8 @@ if (Astro.request.method === "POST") {
     if (typeof formData.message !== "string") {
       errors.message = "Invalid message";
     }
+
+    console.log(formData);
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
@@ -51,11 +53,5 @@ if (Astro.request.method === "POST") {
       {errors.message && <p class="text-red-500">{errors.message}</p>}
       <input class="bg-black text-white" type="submit" value="Send" />
     </form>
-
-    <ul>
-      <li>{formData?.name}</li>
-      <li>{formData?.email}</li>
-      <li>{formData?.message}</li>
-    </ul>
   </PageLayout>
 </Layout>
