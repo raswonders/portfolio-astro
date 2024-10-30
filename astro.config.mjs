@@ -13,5 +13,6 @@ export default defineConfig({
   adapter: netlify(),
   image: {
     service: passthroughImageService()
-  }
+  },
+ 
 });

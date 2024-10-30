@@ -6,6 +6,45 @@ import PageLayout from "../layouts/PageLayout.astro";
 const isValidEmail = (email: string) => {
   return email.includes("@");
 };
+
+async function sendMail(data: FormData) {
+  const url = "https://api.sendgrid.com/v3/mail/send";
+  const message = `Name: ${data.get("name")}\n\n Email: ${data.get("email")}\n\n Message: ${data.get("message")}`;
+  const emailData = {
+    personalizations: [
+      {
+        to: [{ email: "rastislav.hepner@gmail.com" }],
+      },
+    ],
+    from: { email: "rastislav.hepner@gmail.com" },
+    subject: "Someone reached out from your portfolio",
+    content: [
+      {
+        type: "text/plain",
+        value: message,
+      },
+    ],
+  };
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${import.meta.env.SENDGRID_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: await JSON.stringify(emailData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`status ${response.status}`);
+    }
+  } catch (error) {
+    console.error(error);
+    // TODO handle send error gracefully
+  }
+}
+
 let formData;
 const errors = { name: "", email: "", message: "" };
 
@@ -28,7 +67,7 @@ if (Astro.request.method === "POST") {
       errors.message = "Invalid message";
     }
 
-    console.log(formData);
+    sendMail(data);
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
