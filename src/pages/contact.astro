@@ -4,11 +4,11 @@ import Layout from "../layouts/Layout.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 
 const isValidEmail = (email: string) => {
-  const regex = /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gm
+  const regex = /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gm;
   return regex.test(email);
 };
 let formData;
-const errors = {name: "", email: "", message: ""};
+const errors = { name: "", email: "", message: "" };
 
 if (Astro.request.method === "POST") {
   try {
@@ -20,7 +20,7 @@ if (Astro.request.method === "POST") {
     };
 
     if (typeof formData.name !== "string") {
-      errors.name = "Invalid name"
+      errors.name = "Invalid name";
     }
     if (typeof formData.email !== "string" || !isValidEmail(formData.email)) {
       errors.email = `${formData.email} is not a valid email`;
@@ -37,26 +37,26 @@ if (Astro.request.method === "POST") {
 ---
 
 <Layout>
-    <Navbar/>
-    <PageLayout>
-        <form class="flex flex-col max-w-2xl" method="POST">
-            <label for="name">Name</label>
-            <input class="border" name="name" id="name" type="text"/>
-          {errors.name && <p class="text-red-500">{errors.name}</p>}
-            <label for="email">Email</label>
-            <input class="border" name="email" id="email" type="email"/>
-          {errors.email && <p class="text-red-500">{errors.email}</p>}
-            <label for="message">Message</label>
-            <textarea class="border" name="message" id="message" placeholder=""
-            ></textarea>
-          {errors.message && <p class="text-red-500">{errors.message}</p>}
-            <input class="bg-black text-white" type="submit" value="Send"/>
-        </form>
+  <Navbar />
+  <PageLayout>
+    <form class="flex flex-col max-w-2xl" method="POST">
+      <label for="name">Name</label>
+      <input class="border" name="name" id="name" type="text" />
+      {errors.name && <p class="text-red-500">{errors.name}</p>}
+      <label for="email">Email</label>
+      <input class="border" name="email" id="email" type="email" />
+      {errors.email && <p class="text-red-500">{errors.email}</p>}
+      <label for="message">Message</label>
+      <textarea class="border" name="message" id="message" placeholder=""
+      ></textarea>
+      {errors.message && <p class="text-red-500">{errors.message}</p>}
+      <input class="bg-black text-white" type="submit" value="Send" />
+    </form>
 
-        <ul>
-            <li>{formData?.name}</li>
-            <li>{formData?.email}</li>
-            <li>{formData?.message}</li>
-        </ul>
-    </PageLayout>
+    <ul>
+      <li>{formData?.name}</li>
+      <li>{formData?.email}</li>
+      <li>{formData?.message}</li>
+    </ul>
+  </PageLayout>
 </Layout>
