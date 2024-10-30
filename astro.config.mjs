@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 
 import tailwind from '@astrojs/tailwind';
 
@@ -10,5 +10,8 @@ export default defineConfig({
   integrations: [tailwind()],
   server: {port: 3000, host: true},
   output: "server",
-  adapter: netlify()
+  adapter: netlify(),
+  image: {
+    service: passthroughImageService()
+  }
 });
