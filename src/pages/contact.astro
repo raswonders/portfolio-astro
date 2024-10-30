@@ -4,8 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 
 const isValidEmail = (email: string) => {
-  const regex = /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gm;
-  return regex.test(email);
+  return email.includes("@");
 };
 let formData;
 const errors = { name: "", email: "", message: "" };
@@ -23,7 +22,7 @@ if (Astro.request.method === "POST") {
       errors.name = "Invalid name";
     }
     if (typeof formData.email !== "string" || !isValidEmail(formData.email)) {
-      errors.email = `${formData.email} is not a valid email`;
+      errors.email = "Invalid email";
     }
     if (typeof formData.message !== "string") {
       errors.message = "Invalid message";
@@ -44,7 +43,7 @@ if (Astro.request.method === "POST") {
       <input class="border" name="name" id="name" type="text" />
       {errors.name && <p class="text-red-500">{errors.name}</p>}
       <label for="email">Email</label>
-      <input class="border" name="email" id="email" type="email" />
+      <input class="border" name="email" id="email" type="email" required />
       {errors.email && <p class="text-red-500">{errors.email}</p>}
       <label for="message">Message</label>
       <textarea class="border" name="message" id="message" placeholder=""
