@@ -79,39 +79,43 @@ if (Astro.request.method === "POST") {
 <Layout>
   <Navbar />
   <PageLayout>
-    <div class="w-full flex justify-center">
-      <form class="flex flex-col max-w-2xl space-y-6 grow" method="POST">
-        <div class="flex flex-col space-y-2">
-          <label for="name">Name</label>
-          <input class="p-2 border" name="name" id="name" type="text" />
-          {errors.name && <p class="text-red-500">{errors.name}</p>}
-        </div>
-        <div class="flex flex-col space-y-2">
-          <label for="email">Email</label>
-          <input
-            class="p-2 border"
-            name="email"
-            id="email"
-            type="email"
-            required
-          />
-          {errors.email && <p class="text-red-500">{errors.email}</p>}
-        </div>
-        <div class="flex flex-col space-y-2">
-          <label for="message">Message</label>
-          <textarea
-            class="p-2 border min-h-28 resize-y"
-            name="message"
-            id="message"
-            placeholder=""></textarea>
-          {errors.message && <p class="text-red-500">{errors.message}</p>}
-        </div>
+    <h1 class="flex flex-col text-4xl md:text-5xl font-black">
+      <span
+        >Let's build something <span class="text-slate-500">together</span
+        ></span
+      >
+    </h1>
+    <form class="grow flex flex-col max-w-2xl space-y-6" method="POST">
+      <div class="flex flex-col space-y-2">
+        <label for="name">Name</label>
+        <input class="p-2 border" name="name" id="name" type="text" />
+        {errors.name && <p class="text-red-500">{errors.name}</p>}
+      </div>
+      <div class="flex flex-col space-y-2">
+        <label for="email">Email</label>
         <input
-          class="sm:place-self-end px-6 py-4 text-lg font-semibold bg-black text-white outline-offset-4"
-          type="submit"
-          value="Send"
+          class="p-2 border"
+          name="email"
+          id="email"
+          type="email"
+          required
         />
-      </form>
-    </div>
+        {errors.email && <p class="text-red-500">{errors.email}</p>}
+      </div>
+      <div class="flex flex-col space-y-2">
+        <label for="message">Message</label>
+        <textarea
+          class="p-2 border min-h-28 resize-y"
+          name="message"
+          id="message"
+          placeholder=""></textarea>
+        {errors.message && <p class="text-red-500">{errors.message}</p>}
+      </div>
+      <input
+        class="sm:place-self-end px-6 py-4 text-lg font-semibold bg-black text-white outline-offset-4"
+        type="submit"
+        value="Send"
+      />
+    </form>
   </PageLayout>
 </Layout>
