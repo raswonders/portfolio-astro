@@ -17,7 +17,12 @@ const { class: className } = Astro.props;
         >I'm Rastislav, <span class="text-slate-500">Web Developer</span> from Brno</span
       >
     </h1>
-    <a class="px-6 py-4 text-lg font-semibold bg-black text-white">Let's talk</a
+    <a
+      role="button"
+      tabindex="0"
+      href="/contact"
+      class="px-6 py-4 text-lg font-semibold bg-black text-white outline-offset-4"
+      >Let's talk</a
     >
   </div>
   <Image src={profile} alt="Rastislav's profile picture" />
