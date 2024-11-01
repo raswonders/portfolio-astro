@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 # netlify integration
 .netlify/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
