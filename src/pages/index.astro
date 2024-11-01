@@ -1,13 +1,13 @@
 ---
 import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
 import Hero from "../components/Hero.astro";
 import Navbar from "../components/Navbar.astro";
 import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 import Layout from "../layouts/Layout.astro";
 import PageLayout from "../layouts/PageLayout.astro";
-
-export const prerender = true;
+// TODO parse errorParams from query and pass it to contact
 ---
 
 <Layout>
@@ -17,5 +17,6 @@ export const prerender = true;
     <About />
     <Skills />
     <Projects />
+    <Contact />
   </PageLayout>
 </Layout>
