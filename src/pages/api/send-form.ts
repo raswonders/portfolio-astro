@@ -19,13 +19,12 @@ export async function POST(context: APIContext) {
       isFormValid = false;
     }
 
-    // TODO test redirect in case of invalid form
     if (!isFormValid) {
       const errorParams = new URLSearchParams(Object.entries(errors));
       return new Response(null, {
         status: 303,
         headers: {
-          Location: `/${errorParams}`
+          Location: `/?${errorParams.toString()}#contact`
         }
       })
     }
@@ -74,7 +73,6 @@ async function sendMail(data: FormData) {
 
     if (!response.ok) {
       throw new Error(`status ${response.status}`);
-      return response;
     }
 
     return new Response(null, { status: 303, headers: { "Location": "/thank-you" } })
