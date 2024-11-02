@@ -1,6 +1,16 @@
 ---
 import ContactForm from "./ContactForm.astro";
 import Heading from "./Heading.astro";
+
+interface Props {
+  errors: {
+    name?: string;
+    email?: string;
+    message?: string;
+  };
+}
+
+const { errors } = Astro.props;
 ---
 
 <section id="contact">
@@ -9,5 +19,5 @@ import Heading from "./Heading.astro";
       >Let's build something <span class="text-slate-500">together</span></span
     >
   </Heading>
-  <ContactForm />
+  <ContactForm errors={errors} />
 </section>

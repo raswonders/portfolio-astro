@@ -7,7 +7,18 @@ import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 import Layout from "../layouts/Layout.astro";
 import PageLayout from "../layouts/PageLayout.astro";
-// TODO parse errorParams from query and pass it to contact
+
+const searchParams = Astro.url.searchParams;
+const errors = { name: "", email: "", message: "" };
+errors.name = searchParams.get("name")
+  ? (searchParams.get("name") as string)
+  : "";
+errors.email = searchParams.get("email")
+  ? (searchParams.get("email") as string)
+  : "";
+errors.message = searchParams.get("message")
+  ? (searchParams.get("message") as string)
+  : "";
 ---
 
 <Layout>
@@ -17,6 +28,6 @@ import PageLayout from "../layouts/PageLayout.astro";
     <About />
     <Skills />
     <Projects />
-    <Contact />
+    <Contact errors={errors} />
   </PageLayout>
 </Layout>
