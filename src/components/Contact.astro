@@ -1,6 +1,9 @@
 ---
 import ContactForm from "./ContactForm.astro";
 import Heading from "./Heading.astro";
+import Github from "./icons/Github.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Twitter from "./icons/Twitter.astro";
 
 interface Props {
   errors: {
@@ -13,11 +16,25 @@ interface Props {
 const { errors } = Astro.props;
 ---
 
-<section id="contact" class="bg-black px-4 py-32">
+<section id="contact" class="grid md:grid-cols-2 gap-16 bg-black px-4 py-32">
   <Heading>
     <span class="text-white"
       >Let's build something <span class="text-slate-500">together</span></span
     >
   </Heading>
   <ContactForm errors={errors} />
+  <div
+    class="flex gap-4 justify-between items-center md:flex-col md:items-stretch md:justify-normal"
+  >
+    <div class="flex flex-col">
+      <span class="text-xl text-white font-black">Rastislav Hepner.</span>
+      <span class="text-lg text-slate-500 font-normal">Brno, CZ</span>
+    </div>
+
+    <div class="flex text-white gap-2 justify-center md:justify-normal">
+      <Github />
+      <LinkedIn />
+      <Twitter />
+    </div>
+  </div>
 </section>
