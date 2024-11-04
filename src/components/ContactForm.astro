@@ -17,8 +17,13 @@ const { errors } = Astro.props;
   id="contact-form"
 >
   <div class="flex flex-col space-y-2">
-    <label for="name">Name</label>
-    <input class="p-2 border" name="name" id="name" type="text" />
+    <label for="name" class="text-slate-500">Name</label>
+    <input
+      class="p-2 border outline-offset-4"
+      name="name"
+      id="name"
+      type="text"
+    />
     {
       errors.name && (
         <p id="name-error" class="text-red-500">
@@ -28,8 +33,14 @@ const { errors } = Astro.props;
     }
   </div>
   <div class="flex flex-col space-y-2">
-    <label for="email">Email</label>
-    <input class="p-2 border" name="email" id="email" type="email" required />
+    <label for="email" class="text-slate-500">Email</label>
+    <input
+      class="p-2 border outline-offset-4"
+      name="email"
+      id="email"
+      type="email"
+      required
+    />
     {
       errors.email && (
         <p id="email-error" class="text-red-500">
@@ -39,9 +50,9 @@ const { errors } = Astro.props;
     }
   </div>
   <div class="flex flex-col space-y-2">
-    <label for="message">Message</label>
+    <label for="message" class="text-slate-500">Message</label>
     <textarea
-      class="p-2 border min-h-28 resize-y"
+      class="p-2 border min-h-28 resize-y outline-offset-4"
       name="message"
       id="message"
       placeholder=""></textarea>
@@ -54,7 +65,7 @@ const { errors } = Astro.props;
     }
   </div>
   <input
-    class="sm:place-self-end px-6 py-4 text-lg font-semibold bg-black text-white outline-offset-4"
+    class="sm:place-self-end px-6 py-4 text-lg font-semibold bg-slate-300 text-black outline-offset-4"
     type="submit"
     value="Send"
     id="form-submit"
