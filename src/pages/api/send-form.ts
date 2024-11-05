@@ -77,9 +77,14 @@ async function sendMail(data: FormData) {
 
     return new Response(null, { status: 303, headers: { "Location": "/thank-you" } })
   } catch (error) {
-    console.error(error);
-    // TODO handle send error gracefully
+    console.error("Error sending email", error);
+
+    const searchParams = new URLSearchParams({
+      name: data.get("name")?.toString() || "",
+      email: data.get("email")?.toString() || "",
+      message: data.get("message")?.toString() || "",
+    });
+
+    return new Response(null, { status: 303, headers: { "Location": `/oops?${searchParams}` } })
   }
 }
-
-

@@ -1,0 +1,18 @@
+---
+import Heading from "../components/Heading.astro";
+import Layout from "../layouts/Layout.astro";
+
+const searchParams = Astro.url.searchParams;
+---
+
+<Layout>
+  <div class="grid gap-4 h-screen place-content-center text-center">
+    <Heading>Oops</Heading>
+    <p class="text-lg text-slate-500">Something went wrong</p>
+    <div>
+      <a class="px-4 py-2" href={`/?${searchParams}#contact`}>
+        &larr; Back to Contact
+      </a>
+    </div>
+  </div>
+</Layout>
