@@ -1,11 +1,18 @@
 ---
+import Heading from "../components/Heading.astro";
 import Layout from "../layouts/Layout.astro";
-import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-<!-- TODO code thank you page -->
 <Layout>
-  <PageLayout>
-    <h1>Thank you</h1>
-  </PageLayout>
+  <div class="grid gap-4 h-screen place-content-center text-center">
+    <Heading>Thank you</Heading>
+    <p class="text-lg text-slate-500">
+      Thanks for reaching out! I'll get back to you soon.
+    </p>
+    <div>
+      <button class="px-4 py-2" onclick="window.location.href = '/'">
+        &larr; Back to Home
+      </button>
+    </div>
+  </div>
 </Layout>
