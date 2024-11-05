@@ -1,13 +1,18 @@
 ---
+interface Field {
+  value: string;
+  error: string;
+}
+
 interface Props {
-  errors: {
-    name?: string;
-    email?: string;
-    message?: string;
+  fields: {
+    name: Field;
+    email: Field;
+    message: Field;
   };
 }
 
-const { errors } = Astro.props;
+const { fields } = Astro.props;
 ---
 
 <form
@@ -23,11 +28,12 @@ const { errors } = Astro.props;
       name="name"
       id="name"
       type="text"
+      value={fields.name?.value || ""}
     />
     {
-      errors.name && (
+      fields.name && (
         <p id="name-error" class="text-red-500">
-          {errors.name}
+          {fields.name.error}
         </p>
       )
     }
@@ -39,12 +45,13 @@ const { errors } = Astro.props;
       name="email"
       id="email"
       type="email"
+      value={fields.email?.value || ""}
       required
     />
     {
-      errors.email && (
+      fields.email && (
         <p id="email-error" class="text-red-500">
-          {errors.email}
+          {fields.email.error}
         </p>
       )
     }
@@ -55,11 +62,13 @@ const { errors } = Astro.props;
       class="p-2 border min-h-28 resize-y outline-offset-4"
       name="message"
       id="message"
-      placeholder=""></textarea>
+      placeholder=""
+      >{fields.message?.value || ""}
+    </textarea>
     {
-      errors.message && (
+      fields.message && (
         <p id="message-error" class="text-red-500">
-          {errors.message}
+          {fields.message.error}
         </p>
       )
     }

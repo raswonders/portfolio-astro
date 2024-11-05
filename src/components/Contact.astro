@@ -5,15 +5,19 @@ import Github from "./icons/Github.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 import Twitter from "./icons/Twitter.astro";
 
+interface Field {
+  value: string;
+  error: string;
+}
 interface Props {
-  errors: {
-    name?: string;
-    email?: string;
-    message?: string;
+  fields: {
+    name: Field;
+    email: Field;
+    message: Field;
   };
 }
 
-const { errors } = Astro.props;
+const { fields } = Astro.props;
 ---
 
 <section id="contact" class="grid md:grid-cols-2 gap-16 bg-black px-4 py-32">
@@ -22,7 +26,7 @@ const { errors } = Astro.props;
       >Let's build something <span class="text-slate-500">together</span></span
     >
   </Heading>
-  <ContactForm errors={errors} />
+  <ContactForm fields={fields} />
   <div
     class="flex gap-4 justify-between items-center md:flex-col md:items-stretch md:justify-normal"
   >

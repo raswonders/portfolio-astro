@@ -1,30 +1,35 @@
 import type { APIContext } from "astro";
+import { URLSearchParams } from "url";
 
 export async function POST(context: APIContext) {
   try {
     const formData = await context.request.formData();
-    const errors = { name: "", email: "", message: "" };
+    const searchParams = new URLSearchParams({
+      name: formData.get("name")?.toString() || "",
+      email: formData.get("email")?.toString() || "",
+      message: formData.get("message")?.toString() || "",
+    });
+
     let isFormValid = true;
 
     if (typeof formData.get("name") !== "string") {
-      errors.name = "Invalid name";
+      searchParams.append("nameError", "Invalid name")
       isFormValid = false;
     }
     if (typeof formData.get("email") !== "string" || !isValidEmail(formData.get("email") as string | null)) {
-      errors.email = "Invalid email";
+      searchParams.append("emailError", "Invalid email")
       isFormValid = false;
     }
     if (typeof formData.get("message") !== "string") {
-      errors.message = "Invalid message";
+      searchParams.append("message", "Invalid message")
       isFormValid = false;
     }
 
     if (!isFormValid) {
-      const errorParams = new URLSearchParams(Object.entries(errors));
       return new Response(null, {
         status: 303,
         headers: {
-          Location: `/?${errorParams.toString()}#contact`
+          Location: `/?${searchParams.toString()}#contact`
         }
       })
     }
