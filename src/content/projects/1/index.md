@@ -1,10 +1,10 @@
 ---
-title: Title 1 
+title: Title 1
 description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt itaque explicabo, obcaecati doloremque culpa officiis iusto libero totam non quae.
 cover: "./screenshot.webp"
 coverAlt: ""
-repo: "" 
-site: "" 
+repo: ""
+site: ""
 ---
 
 # Project 1

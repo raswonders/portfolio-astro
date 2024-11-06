@@ -1,10 +1,10 @@
 ---
-title: Title no. 4 
+title: Title no. 4
 description: Odio illo quis fuga ipsa tempora. Facere dolore suscipit reprehenderit doloribus neque! Laudantium quam at explicabo dolor dolorum perferendis magni?
-cover: ./screenshot.webp 
+cover: ./screenshot.webp
 coverAlt: ""
-repo: "" 
-site: "" 
+repo: ""
+site: ""
 ---
 
 # Project 4
