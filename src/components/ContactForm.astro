@@ -1,0 +1,82 @@
+---
+interface Field {
+  value: string;
+  error: string;
+}
+
+interface Props {
+  fields: {
+    name: Field;
+    email: Field;
+    message: Field;
+  };
+}
+
+const { fields } = Astro.props;
+---
+
+<form
+  class="grow flex flex-col max-w-2xl space-y-6"
+  method="POST"
+  action="/api/send-form"
+  id="contact-form"
+>
+  <div class="flex flex-col space-y-2">
+    <label for="name" class="text-slate-500">Name</label>
+    <input
+      class="p-2 border outline-offset-4"
+      name="name"
+      id="name"
+      type="text"
+      value={fields.name?.value || ""}
+    />
+    {
+      fields.name && (
+        <p id="name-error" class="text-red-500">
+          {fields.name.error}
+        </p>
+      )
+    }
+  </div>
+  <div class="flex flex-col space-y-2">
+    <label for="email" class="text-slate-500">Email</label>
+    <input
+      class="p-2 border outline-offset-4"
+      name="email"
+      id="email"
+      type="email"
+      value={fields.email?.value || ""}
+      required
+    />
+    {
+      fields.email && (
+        <p id="email-error" class="text-red-500">
+          {fields.email.error}
+        </p>
+      )
+    }
+  </div>
+  <div class="flex flex-col space-y-2">
+    <label for="message" class="text-slate-500">Message</label>
+    <textarea
+      class="p-2 border min-h-28 resize-y outline-offset-4"
+      name="message"
+      id="message"
+      placeholder=""
+      >{fields.message?.value || ""}
+    </textarea>
+    {
+      fields.message && (
+        <p id="message-error" class="text-red-500">
+          {fields.message.error}
+        </p>
+      )
+    }
+  </div>
+  <input
+    class="sm:place-self-end px-6 py-4 text-lg font-semibold bg-slate-300 text-black outline-offset-4"
+    type="submit"
+    value="Send"
+    id="form-submit"
+  />
+</form>

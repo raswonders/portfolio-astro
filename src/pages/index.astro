@@ -1,5 +1,6 @@
 ---
 import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
 import Hero from "../components/Hero.astro";
 import Navbar from "../components/Navbar.astro";
 import Projects from "../components/Projects.astro";
@@ -7,7 +8,33 @@ import Skills from "../components/Skills.astro";
 import Layout from "../layouts/Layout.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 
-export const prerender = true;
+const searchParams = Astro.url.searchParams;
+const fields = {
+  name: { value: "", error: "" },
+  email: { value: "", error: "" },
+  message: { value: "", error: "" },
+};
+
+fields.name.value = searchParams.get("name")
+  ? (searchParams.get("name") as string)
+  : "";
+fields.name.error = searchParams.get("nameError")
+  ? (searchParams.get("nameError") as string)
+  : "";
+
+fields.email.value = searchParams.get("email")
+  ? (searchParams.get("email") as string)
+  : "";
+fields.email.error = searchParams.get("emailError")
+  ? (searchParams.get("emailError") as string)
+  : "";
+
+fields.message.value = searchParams.get("message")
+  ? (searchParams.get("message") as string)
+  : "";
+fields.message.error = searchParams.get("messageError")
+  ? (searchParams.get("emailError") as string)
+  : "";
 ---
 
 <Layout>
@@ -18,4 +45,5 @@ export const prerender = true;
     <Skills />
     <Projects />
   </PageLayout>
+  <Contact fields={fields} />
 </Layout>

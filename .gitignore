@@ -25,3 +25,10 @@ pnpm-debug.log*
 
 # netlify integration
 .netlify/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+e2e/example.spec.ts
+tests/example.spec.ts
+tests-examples/demo-todo-app.spec.ts
