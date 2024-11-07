@@ -1,4 +1,17 @@
 import test, { expect } from "@playwright/test";
+import { initDevServer, type DevServer } from "./utils";
+
+let devServer: DevServer;
+
+test.beforeAll(async () => {
+  devServer = await initDevServer("http:localhost:3000");
+});
+
+test.afterAll(() => {
+  if (devServer) {
+    devServer.kill("SIGTERM");
+  }
+});
 
 test.describe("Contact form", () => {
   test("should load ok", async ({ page }) => {
