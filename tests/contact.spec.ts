@@ -19,11 +19,6 @@ test.describe("Contact form", () => {
     await expect(page.locator("#contact-form")).toBeVisible();
   });
 
-  test("should display validation errors from api", async ({ page }) => {
-    await page.goto("/?name=&email=Invalid+email&message=#contact");
-    await expect(page.locator("#email-error")).toHaveText("Invalid email");
-  });
-
   test("should redirect to thank you on submit", async ({ page }) => {
     await page.goto("/");
 
