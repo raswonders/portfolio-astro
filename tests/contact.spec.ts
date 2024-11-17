@@ -4,7 +4,7 @@ import { initDevServer, type DevServer } from "./utils";
 let devServer: DevServer;
 
 test.beforeAll(async () => {
-  devServer = await initDevServer("http:localhost:3000");
+  devServer = await initDevServer("http://localhost:3000");
 });
 
 test.afterAll(() => {
