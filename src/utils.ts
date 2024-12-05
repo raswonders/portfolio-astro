@@ -29,7 +29,7 @@ export async function sendMail(data: FormData) {
       Authorization: `Bearer ${import.meta.env.SENDGRID_API_KEY}`,
       "Content-Type": "application/json",
     },
-    body: await JSON.stringify(emailData),
+    body: JSON.stringify(emailData),
   });
 
   if (!response.ok) {

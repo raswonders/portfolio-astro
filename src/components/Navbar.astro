@@ -30,7 +30,7 @@ import { Image } from "astro:assets";
   const menuToggle = document.getElementById("menu-toggle");
   const menuContent = document.getElementById("menu-content");
 
-  menuToggle?.addEventListener("click", (event) => {
+  menuToggle?.addEventListener("click", () => {
     menuContent?.classList.toggle("hidden");
   });
 

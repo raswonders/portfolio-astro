@@ -48,7 +48,7 @@ test.describe("Social media links", () => {
     ]);
 
     await newPage.waitForLoadState();
-    await expect(newPage.url()).toBe("https://github.com/raswonders");
+    expect(newPage.url()).toBe("https://github.com/raswonders");
   });
 
   test("linkedin link should navigate to correct url", async ({ page }) => {
@@ -60,9 +60,7 @@ test.describe("Social media links", () => {
     ]);
 
     await newPage.waitForLoadState();
-    await expect(newPage.url()).toBe(
-      "https://www.linkedin.com/in/rastislavhepner/"
-    );
+    expect(newPage.url()).toBe("https://www.linkedin.com/in/rastislavhepner/");
   });
 
   test("twitter link should navigate to correct url", async ({ page }) => {
@@ -74,6 +72,6 @@ test.describe("Social media links", () => {
     ]);
 
     await newPage.waitForLoadState();
-    await expect(newPage.url()).toBe("https://x.com/raswonders");
+    expect(newPage.url()).toBe("https://x.com/raswonders");
   });
 });
