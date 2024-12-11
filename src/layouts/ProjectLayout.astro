@@ -1,0 +1,54 @@
+---
+import { getEntry } from "astro:content";
+import PageLayout from "./PageLayout.astro";
+import Heading from "../components/Heading.astro";
+
+export const prerender = true;
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+const project = await getEntry("projects", id);
+
+if (!project) {
+  throw new Error(`Project with id "${id}" not found"`);
+}
+---
+
+<PageLayout>
+  <header class="flex flex-col space-y-12">
+    <Heading>
+      {project.data.title}
+    </Heading>
+    <p>{project.data.description}</p>
+
+    <div class="grid grid-cols-3 gap-8">
+      <div class="space-y-4">
+        <h3 class="uppercase text-sm font-bold">Stack</h3>
+        <ul>
+          {project.data.stack.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h3 class="uppercase text-sm font-bold">Live</h3>
+        <div>
+          <a target="_blank" href={project.data.site}>View site &rarr;</a>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h3 class="uppercase text-sm font-bold">Repo</h3>
+        <div>
+          <a target="_blank" href={project.data.repo}>Check code &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <slot />
+</PageLayout>
+
+<!-- TODO add project carousel  -->
+<!-- TODO add simple black footer with contact btn -->
