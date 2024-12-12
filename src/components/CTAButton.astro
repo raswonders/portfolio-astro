@@ -1,0 +1,16 @@
+---
+interface Props {
+  variant: "dark" | "light";
+  href: string;
+}
+
+const { variant, href } = Astro.props;
+---
+
+<a
+  role="button"
+  tabindex="0"
+  href={href}
+  class=`px-6 py-4 text-lg font-semibold ${variant === "dark" ? "bg-black text-white": "bg-slate-300 text-black"} outline-offset-4`
+  ><slot /></a
+>
