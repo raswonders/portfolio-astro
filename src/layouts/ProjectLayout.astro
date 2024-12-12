@@ -2,6 +2,7 @@
 import { getEntry } from "astro:content";
 import PageLayout from "./PageLayout.astro";
 import Heading from "../components/Heading.astro";
+import ProjectFooter from "../components/ProjectFooter.astro";
 
 export const prerender = true;
 
@@ -49,6 +50,6 @@ if (!project) {
   </header>
   <slot />
 </PageLayout>
+<ProjectFooter />
 
 <!-- TODO add project carousel  -->
-<!-- TODO add simple black footer with contact btn -->
