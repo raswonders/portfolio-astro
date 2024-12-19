@@ -1,9 +1,9 @@
 ---
-import { getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import PageLayout from "./PageLayout.astro";
 import Heading from "../components/Heading.astro";
 import ProjectFooter from "../components/ProjectFooter.astro";
-
+import Projects from "../components/Projects.astro";
 export const prerender = true;
 
 interface Props {
@@ -11,7 +11,8 @@ interface Props {
 }
 
 const { id } = Astro.props;
-const project = await getEntry("projects", id);
+const projects = await getCollection("projects");
+const project = projects.filter((project) => project.id === id)[0];
 
 if (!project) {
   throw new Error(`Project with id "${id}" not found"`);
@@ -49,7 +50,6 @@ if (!project) {
     </div>
   </header>
   <slot />
+  <Projects projects={projects.filter((project) => project.id !== id)} />
 </PageLayout>
 <ProjectFooter />
-
-<!-- TODO add project carousel  -->
