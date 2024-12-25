@@ -1,11 +1,92 @@
 ---
 import Navbar from "../../components/Navbar.astro";
 import Layout from "../../layouts/Layout.astro";
-import PageLayout from "../../layouts/PageLayout.astro";
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
 ---
 
 <Layout>
   <Navbar />
-  <ProjectLayout id="1" />
+  <ProjectLayout id="1">
+    <section class="space-y-8">
+      <h1 class="text-3xl font-extrabold">Project's Goal</h1>
+      <p>
+        Club 101 is a private night club in Rome. As a private club, it requires
+        all of its visitors to be registered members. Due to its recent rise in
+        popularity, it gets hundreds of individuals visiting the club each
+        night. The goal of this app is to help the club's staff manage
+        memberships more efficiently and make the check-in process as seamless
+        as possible.
+      </p>
+    </section>
+    <section class="space-y-8">
+      <h1 class="text-3xl font-extrabold">Challenges</h1>
+      <section class="space-y-4">
+        <h2 class="text-xl font-extrabold">UI Design</h2>
+        <p>
+          In addition to development, I was working as UI designer for this
+          project. From the start, I recognized that information clarity would
+          be one of the most critical priorities. To achieve this, I chose
+          shadcn/ui , a clean and proven React component library built on Radix
+          UI, known for its excellent accessibility and support for the UI
+          elements this project required. The visual theme, including the color
+          system, was inspired by Radix Themes. While the app supports both
+          light and dark modes, I focused most of my efforts on optimizing the
+          dark mode experience, as it serves as the primary interface for users.
+        </p>
+      </section>
+      <section class="space-y-4">
+        <h2 class="text-xl font-extrabold">Presenting Member Data</h2>
+        <p>
+          The club has become quite popular in Rome, boasting a substantial
+          database of over 20,000 members. For each member, we manage detailed
+          information, including personal details, membership status,
+          suspensions, and account notes. This data needs to be easily
+          accessible and visually clear for club staff across a variety of
+          devices. To achieve this, I chose to use Table, a type-safe React
+          library that integrates seamlessly with our UI component library,
+          shadcn/ui. TanStack Table offers powerful features like client-side
+          filtering, pagination, and more. For smooth browsing and uninterrupted
+          pagination, we implemented infinite scrolling powered by Query as a
+          robust caching solution.
+        </p>
+      </section>
+    </section>
+    <section class="space-y-4">
+      <h2 class="text-xl font-extrabold">Efficient Check-in</h2>
+      <p>
+        During rush hour, the club often sees tens of visitors arriving
+        simultaneously, all needing to go through the check-in process before
+        entering. Check-in is the single most significant bottleneck in the
+        club’s operations, as it involves searching for existing members,
+        renewing expired memberships, and registering new ones. To streamline
+        this process and ensure it’s as quick and seamless as possible, I chose
+        to use React Hook Form for managing all forms related to adding or
+        editing member details. This library is type-safe, offers robust input
+        validation, and has become a de facto standard in the React ecosystem.
+        In addition to using a trusted library, I ensured that the form fields
+        are fully navigable using just a keyboard and are optimized for use
+        across a wide range of devices, in order to speed up the check-in
+        process and make it more reliable.
+      </p>
+    </section>
+    <section class="space-y-8">
+      <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
+      <div>
+        <p>
+          This project was a significant learning experience. I discovered how
+          invaluable type systems can be, particularly for maintaining and
+          revisiting a codebase. Returning to a project after even a month-long
+          break felt daunting, but having type-fueled code suggestions made the
+          work easier. It helped me to quickly orient myself in code I had
+          written, reducing uncertainty and second-guessing.
+        </p>
+        <p>
+          I also delved deeper into working with forms. Optimizing the check-in
+          process had its own set of challenges, and figuring out what to
+          improve and how to implement those improvements was a rewarding
+          journey.
+        </p>
+      </div>
+    </section>
+  </ProjectLayout>
 </Layout>
