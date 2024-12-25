@@ -49,7 +49,9 @@ if (!project) {
       </div>
     </div>
   </header>
-  <slot />
+  <main class="space-y-16">
+    <slot />
+  </main>
   <Projects projects={projects.filter((project) => project.id !== id)} />
 </PageLayout>
 <ProjectFooter />
