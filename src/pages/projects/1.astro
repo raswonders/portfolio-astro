@@ -1,11 +1,85 @@
 ---
 import Navbar from "../../components/Navbar.astro";
 import Layout from "../../layouts/Layout.astro";
-import PageLayout from "../../layouts/PageLayout.astro";
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
 ---
 
 <Layout>
   <Navbar />
-  <ProjectLayout id="1" />
+  <ProjectLayout id="1">
+    <section class="space-y-8">
+      <h1 class="text-3xl font-extrabold">Project's Goal</h1>
+      <p>
+        Club 101 is a private night club in Rome. By being private, it requires
+        from all of its visitors to be registered members. Due to its recent
+        raise in popularity it get hundredths of individuals visiting the club
+        per night. Goal of this app is to help club's staff manage memberships
+        in more efficient way and make the check-in process as seamless as
+        possible.
+      </p>
+    </section>
+    <section class="space-y-8">
+      <h1 class="text-3xl font-extrabold">Challenges</h1>
+      <section class="space-y-4">
+        <h2 class="text-xl font-extrabold">UI Design</h2>
+        <p>
+          Since I'd started this project, I'm filling also ui designer shoes on
+          this project. When deciding At the beggining it was clear for me that
+          one of the most important design feature is information clarity. Hence
+          I picked clean looking shadcn/ui, a proven React component library
+          based on Radix UI with great accessibility and support of most of the
+          ui elements this project needed. The visual theme including color
+          system was inspired by Radix Themes. Even though page supports both
+          light and dark mode, most of my efforts went into optimising dark mode
+          as it is going to be primary way for interacting with app.
+        </p>
+      </section>
+      <section class="space-y-4">
+        <h2 class="text-xl font-extrabold">Presenting Members Data</h2>
+        <p>
+          Club is quite popular in Rome and has already a big dataset of members
+          over 20K. For each member we must track data like personal info,
+          membership, suspension and account notes, which then we need to
+          present to club workers on various various devices. In order to make
+          this members data presentable, I've decided to use Tanstack Table.
+          It's typesafe React library integrated with our ui component library
+          shadcn/ui, with lots of useful features like client filters,
+          pagination, etc. For seemless browsing and pagination we're using
+          infinite scroll with Tanstack Query as a caching solution.
+        </p>
+      </section>
+      <section class="space-y-4">
+        <h2 class="text-xl font-extrabold">Optimal Check-in</h2>
+        <p>
+          During rush hour, there are times when to the club arrives tens of
+          visitors at the same time. Each of these has to be processed via
+          check-in before they can be admitted to the Club. Check-in represents
+          the single biggest bottleneck in club's operation. Check-in process
+          consists from searching preexisting members, renewing their membership
+          when expired and registering new ones. In order for this process to be
+          as quick and smooth as possible I've decided to use React Hook Form
+          library for basically all forms which deal with either adding or
+          editing members. Lib is typesafe and has good input validation and is
+          defacto standard in React ecosystem.
+        </p>
+      </section>
+      <section class="space-y-8">
+        <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
+        <div>
+          <p>
+            This project taught me a lot. I realized how helpful types can be
+            especially with code maintenance. Coming back to a codebase after
+            even month long break and being productive can be quite hurdle. Code
+            suggestions fueled by types made this much better experience for me.
+            I was instantly reminded of code I've written and didn't had to
+            second guess myself as much.
+          </p>
+          <p>
+            Other area which I'd got to explore were forms. Figuring out what
+            and how to optimize for check-in was quite a journey.
+          </p>
+        </div>
+      </section>
+    </section>
+  </ProjectLayout>
 </Layout>
