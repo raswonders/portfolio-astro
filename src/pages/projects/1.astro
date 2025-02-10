@@ -7,6 +7,11 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
 <Layout>
   <Navbar />
   <ProjectLayout id="1">
+    <img
+      src="/images/title.webp"
+      alt="Member's table screenshot"
+      class="-mt-16"
+    />
     <section class="space-y-8 max-w-prose">
       <h1 class="text-3xl font-extrabold">Project's Goal</h1>
       <p>
@@ -31,7 +36,7 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
           elements this project required. The visual theme, including the color
           system, was inspired by Radix Themes. While the app supports both
           light and dark modes, I focused most of my efforts on optimizing the
-          dark mode experience, as it serves as the primary interface for users.
+          dark mode experience, as it serves as the primary theme for users.
         </p>
       </section>
       <section class="space-y-4 max-w-prose">
@@ -42,10 +47,10 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
           information, including personal details, membership status,
           suspensions, and account notes. This data needs to be easily
           accessible and visually clear for club staff across a variety of
-          devices. To achieve this, I chose to use Table, a type-safe React
-          library that integrates seamlessly with our UI component library,
-          shadcn/ui. TanStack Table offers powerful features like client-side
-          filtering, pagination, and more. For smooth browsing and uninterrupted
+          devices. To achieve this, I chose to use TanStack Table, a type-safe
+          React library that integrates seamlessly with our component library.
+          TanStack Table offers powerful features like client-side filtering,
+          pagination, and more. For smooth browsing and uninterrupted
           pagination, we implemented infinite scrolling powered by Query as a
           robust caching solution.
         </p>
