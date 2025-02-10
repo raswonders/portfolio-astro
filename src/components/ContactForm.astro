@@ -62,9 +62,8 @@ const { fields } = Astro.props;
       class="p-2 border min-h-28 resize-y outline-offset-4"
       name="message"
       id="message"
-      placeholder=""
-      >{fields.message?.value || ""}
-    </textarea>
+      placeholder="">{fields.message?.value || ""}</textarea
+    >
     {
       fields.message && (
         <p id="message-error" class="text-red-500">
