@@ -7,12 +7,10 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
 <Layout>
   <Navbar />
   <ProjectLayout id="1">
-    <img
-      src="/images/title.webp"
-      alt="Member's table screenshot"
-      class="-mt-16"
-    />
-    <section class="space-y-8 max-w-prose">
+    <div class="col-span-2 -mt-16">
+      <img src="/images/title.webp" alt="Member's table screenshot" />
+    </div>
+    <section class="space-y-8">
       <h1 class="text-3xl font-extrabold">Project's Goal</h1>
       <p>
         Club 101 is a private nightclub in Rome, Italy. As a private club, all
@@ -22,9 +20,9 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
         load connected with members, whose number rises every day.
       </p>
     </section>
-    <section class="space-y-8 max-w-prose ml-auto">
-      <h1 class="text-3xl font-extrabold">Challenges</h1>
+    <section class="space-y-8 grid md:grid-cols-2 gap-x-8 gap-y-8">
       <section class="space-y-4">
+        <h1 class="text-3xl font-extrabold">Challenges</h1>
         <h2 class="text-xl font-extrabold">UI Design</h2>
         <p>
           From the start, it was clear that information clarity would be one of
@@ -47,7 +45,7 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
           and dynamically loading it based on the preferred option.
         </p>
       </section>
-      <section class="space-y-4 max-w-prose">
+      <section class="space-y-4">
         <h2 class="text-xl font-extrabold">Presenting Member Data</h2>
         <p>
           The club is quite popular, already having a substantial database of
@@ -66,7 +64,7 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
           > as a caching solution and state manager.
         </p>
       </section>
-      <section class="space-y-4 max-w-prose">
+      <section class="space-y-4">
         <h2 class="text-xl font-extrabold">Efficient Check-in</h2>
         <p>
           During rush hour, the club often sees tens of visitors arriving
@@ -84,11 +82,12 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
           that the form fields can be quickly navigated using just a keyboard and
           are optimized for use across a wide range of devices. Part of this process
           was the creation of a custom <em>DateField</em> component, which I'm quite
-          proud of as it required quite a bit of work to feel right and allow quick input.
+          proud of as it required quite a bit of work to feel right and allow quick
+          input.
         </p>
       </section>
     </section>
-    <section class="space-y-8 max-w-prose">
+    <section class="space-y-8">
       <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
       <div class="space-y-4">
         <p>
