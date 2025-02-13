@@ -10,11 +10,12 @@ const projects = defineCollection({
       coverAlt: z.string(),
       repo: z.string(),
       site: z.string(),
+      stack: z.array(z.string()),
     }),
 
   loader: glob({
     base: "src/content/projects",
-    pattern: "**/*.md",
+    pattern: "**/*.json",
   }),
 });
 
