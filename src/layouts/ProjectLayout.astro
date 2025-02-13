@@ -20,11 +20,11 @@ if (!project) {
 ---
 
 <PageLayout>
-  <header class="flex flex-col space-y-12 max-w-prose">
+  <header class="flex flex-col space-y-8 md:space-y-16 max-w-prose">
     <Heading>
       {project.data.title}
     </Heading>
-    <p>{project.data.description}</p>
+    <p class="text-lg">{project.data.description}</p>
 
     <div class="grid grid-cols-3 gap-8">
       <div class="space-y-4">
