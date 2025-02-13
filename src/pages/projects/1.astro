@@ -20,17 +20,9 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
         load connected with members, whose number rises every day.
       </p>
     </section>
-    <section class="space-y-8 grid md:grid-cols-2 gap-x-8 gap-y-8">
-      <div class="flex flex-col items-center justify-center text-3xl font-bold">
-        <img class="h-8" src="/icons/radix.svg" alt="Radix Themes logo" />
-        <span>+</span>
-        <div class="flex gap-1">
-          <img class="w-8" src="/icons/shadcn.svg" alt="Shadcn/ui logo" />
-          <span>shadcn/ui</span>
-        </div>
-      </div>
 
-      <section class="space-y-4">
+    <section class="space-y-8 grid md:grid-cols-2 gap-x-8 gap-y-8">
+      <section class="order-1 md:order-2 space-y-4">
         <h1 class="text-3xl font-extrabold">Challenges</h1>
         <h2 class="text-xl font-extrabold">UI Design</h2>
         <p>
@@ -55,7 +47,18 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
         </p>
       </section>
 
-      <section class="space-y-4">
+      <div
+        class="order-2 md:order-1 flex flex-col items-center justify-center text-3xl font-bold"
+      >
+        <img class="h-8" src="/icons/radix.svg" alt="Radix Themes logo" />
+        <span>+</span>
+        <div class="flex gap-1">
+          <img class="w-8" src="/icons/shadcn.svg" alt="Shadcn/ui logo" />
+          <span>shadcn/ui</span>
+        </div>
+      </div>
+
+      <section class="order-3 space-y-4">
         <h2 class="text-xl font-extrabold">Presenting Member Data</h2>
         <p>
           The club is quite popular, already having a substantial database of
@@ -74,17 +77,13 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
           > as a caching solution and state manager.
         </p>
       </section>
-      <div class="max-w-80 rounded-lg overflow-hidden flex justify-self-center">
-        <img
-          src="/images/iphone12.webp"
-          alt="Members table iphone mockup"
-        />
+      <div
+        class="order-4 max-w-80 rounded-lg overflow-hidden flex justify-self-center"
+      >
+        <img src="/images/iphone12.webp" alt="Members table iphone mockup" />
       </div>
 
-      <div class="max-w-80 flex rounded-lg overflow-hidden justify-self-center">
-        <img src="/images/add-member.png" alt="Add member form" />
-      </div>
-      <section class="space-y-4">
+      <section class="order-5 md:order-6 space-y-4">
         <h2 class="text-xl font-extrabold">Efficient Check-in</h2>
         <p>
           During rush hour, the club often sees tens of visitors arriving
@@ -106,6 +105,12 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
           input.
         </p>
       </section>
+
+      <div
+        class="order-6 md:order-5 max-w-80 flex rounded-lg overflow-hidden justify-self-center"
+      >
+        <img src="/images/add-member.png" alt="Add member form" />
+      </div>
     </section>
     <section class="space-y-8">
       <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
