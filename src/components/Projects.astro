@@ -11,23 +11,29 @@ const { projects } = Astro.props;
 
 <section id="projects" class="flex flex-col items-center space-y-16">
   <h2 class="text-2xl font-extrabold">Projects</h2>
-  <div class="grid md:grid-cols-2 gap-x-8 gap-y-8">
+  <div class="grid md:grid-cols-2 gap-x-8 gap-y-8 tracking-wide leading-normal">
     {
       projects.map((project) => {
         const { title, description, cover, coverAlt } = project.data;
         return (
-          <article class="flex flex-col border">
-            <Image alt={coverAlt} src={cover} width={300} height={200} />
-            <div class="grow flex flex-col space-y-4">
-              <h3 class="text-xl font-semibold">{title}</h3>
-              <p>{description}</p>
-              <a
-                class="text-sm font-medium uppercase"
-                href={`projects/${project.id}`}
-              >
-                Read Story &rarr;
-              </a>
+          <article class="flex flex-col gap-y-4">
+            <Image alt={coverAlt} src={cover} class="rounded-2xl" />
+            <h3 class="text-xl font-semibold">{title}</h3>
+            <div class="flex flex-col gap-y-2">
+              <p class="text-neutral-600">{description}</p>
+              <ul class="flex flex-wrap gap-x-2 text-neutral-400 text-sm">
+                {project.data.stack.map((name: string) => {
+                  let nameJoined = name.replaceAll(" ", "");
+                  return <li>{nameJoined}</li>;
+                })}
+              </ul>
             </div>
+            <a
+              class="text-sm font-medium uppercase"
+              href={`projects/${project.id}`}
+            >
+              Read Story &rarr;
+            </a>
           </article>
         );
       })
