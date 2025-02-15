@@ -5,33 +5,33 @@ import LinkedIn from "./icons/LinkedIn.astro";
 import Twitter from "./icons/Twitter.astro";
 ---
 
-<section id="contact" class="grid md:grid-cols-2 gap-16 bg-black px-4 md:px-24 py-20">
-  <div
-    class="flex gap-4 justify-between items-center md:flex-col md:items-stretch md:justify-normal"
-  >
-    <div class="flex flex-col">
-      <span class="text-xl text-white font-black">Rastislav Hepner.</span>
-      <span class="text-lg text-slate-500 font-normal">Brno, CZ</span>
+<section id="contact" class="bg-black px-4 md:px-24 py-20">
+  <div class="grid md:grid-cols-2 gap-16 max-w-screen-2xl mx-auto">
+    <div
+      class="flex gap-4 justify-between items-center md:flex-col md:items-stretch md:justify-normal"
+    >
+      <div class="flex flex-col">
+        <span class="text-xl text-white font-black">Rastislav Hepner.</span>
+        <span class="text-lg text-slate-500 font-normal">Brno, CZ</span>
+      </div>
+      <div class="flex text-white gap-2 justify-center md:justify-normal">
+        <a id="github" target="_blank" href="https://github.com/raswonders">
+          <Github />
+        </a>
+        <a
+          id="linkedin"
+          target="_blank"
+          href="https://www.linkedin.com/in/rastislavhepner/"
+        >
+          <LinkedIn />
+        </a>
+        <a id="twitter" target="_blank" href="https://x.com/raswonders">
+          <Twitter />
+        </a>
+      </div>
     </div>
-
-    <div class="flex text-white gap-2 justify-center md:justify-normal">
-      <a id="github" target="_blank" href="https://github.com/raswonders">
-        <Github />
-      </a>
-      <a
-        id="linkedin"
-        target="_blank"
-        href="https://www.linkedin.com/in/rastislavhepner/"
-      >
-        <LinkedIn />
-      </a>
-      <a id="twitter" target="_blank" href="https://x.com/raswonders">
-        <Twitter />
-      </a>
+    <div class="flex justify-end items-start">
+      <CTAButton href="/#contact" variant="light">Let's talk</CTAButton>
     </div>
-  </div>
-
-  <div class="flex justify-end items-start">
-    <CTAButton href="/#contact" variant="light">Let's talk</CTAButton>
   </div>
 </section>
