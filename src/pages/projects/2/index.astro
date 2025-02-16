@@ -2,13 +2,15 @@
 import Navbar from "../../../components/Navbar.astro";
 import Layout from "../../../layouts/Layout.astro";
 import ProjectLayout from "../../../layouts/ProjectLayout.astro";
+import { Image } from "astro:assets";
+import titleImage from "../../../assets/projects/2/title.webp";
 ---
 
 <Layout>
   <Navbar />
   <ProjectLayout id="2">
     <div class="col-span-2">
-      <img src="/images/title.webp" alt="Tibi-English.sk" />
+      <Image src={titleImage} alt="Tibi-English.sk" />
     </div>
     <section class="space-y-8 max-w-prose">
       <h1 class="text-3xl font-extrabold">Project's Goal</h1>
