@@ -1,14 +1,20 @@
 ---
-import Navbar from "../../components/Navbar.astro";
-import Layout from "../../layouts/Layout.astro";
-import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Layout from "../../../layouts/Layout.astro";
+import ProjectLayout from "../../../layouts/ProjectLayout.astro";
+import Image from "astro/components/Image.astro";
+import titleImage from "../../../assets/projects/1/title.webp";
+import searchImage from "../../../assets/projects/1/search.webp";
+import checkInImage from "../../../assets/projects/1/check-in.webp";
+import radixIcon from "../../../assets/projects/1/radix.svg";
+import shadcnIcon from "../../../assets/projects/1/shadcn.svg";
 ---
 
 <Layout>
   <Navbar />
   <ProjectLayout id="1">
     <div class="col-span-2">
-      <img src="/images/title.webp" alt="Member's table screenshot" />
+      <Image src={titleImage} alt="Member's table screenshot" />
     </div>
     <section class="space-y-8 max-w-prose">
       <h1 class="text-3xl font-extrabold">Project's Goal</h1>
@@ -52,10 +58,10 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
       <div
         class="order-2 self-center md:order-1 flex flex-col items-center justify-center text-3xl font-bold"
       >
-        <img class="h-8" src="/icons/radix.svg" alt="Radix Themes logo" />
+        <Image class="w-24" src={radixIcon} alt="Radix Themes logo" />
         <span>+</span>
         <div class="flex gap-1">
-          <img class="w-8" src="/icons/shadcn.svg" alt="Shadcn/ui logo" />
+          <Image class="w-8" src={shadcnIcon} alt="Shadcn/ui logo" />
           <span>shadcn/ui</span>
         </div>
       </div>
@@ -82,7 +88,7 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
       <div
         class="order-4 max-w-80 rounded-lg overflow-hidden flex justify-self-center"
       >
-        <img src="/images/iphone12.webp" alt="Members table iphone mockup" />
+        <Image src={searchImage} alt="Members table mockup" />
       </div>
 
       <section class="order-5 md:order-6 space-y-4">
@@ -111,7 +117,7 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
       <div
         class="order-6 md:order-5 max-w-80 flex rounded-lg overflow-hidden justify-self-center"
       >
-        <img src="/images/add-member.webp" alt="Add member form" />
+        <Image src={checkInImage} alt="Check-in UI" />
       </div>
     </section>
     <section class="space-y-8 max-w-prose">
