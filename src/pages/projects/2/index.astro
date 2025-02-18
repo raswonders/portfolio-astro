@@ -4,6 +4,7 @@ import Layout from "../../../layouts/Layout.astro";
 import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 import { Image } from "astro:assets";
 import titleImage from "../../../assets/projects/2/title.webp";
+import fullPageImage from "../../../assets/projects/2/tibi-full.webp";
 ---
 
 <Layout>
@@ -56,6 +57,12 @@ import titleImage from "../../../assets/projects/2/title.webp";
           platform supports export into code natively.
         </p>
       </section>
+
+      <div class="order-2 row-span-2">
+        <div class="max-w-80 rounded-lg overflow-hidden justify-self-center drop-shadow-md">
+          <Image src={fullPageImage} alt="Tibi English full page mockup" />
+        </div>
+      </div>
 
       <section class="order-3 space-y-4">
         <h2 class="text-xl font-extrabold">Migrating to Astro + Sanity</h2>
