@@ -15,11 +15,8 @@ import titleImage from "../../../assets/projects/2/title.webp";
     <section class="space-y-8 max-w-prose">
       <h1 class="text-3xl font-extrabold">Project's Goal</h1>
       <p>
-        Club 101 is a private nightclub in Rome, Italy. As a private club, all
-        of its visitors must be registered members. Due to its recent rise in
-        popularity, the club gets hundreds of individuals visiting each night.
-        The goal of this app is to help the club's staff handle the managerial
-        load connected with members, whose number rises every day.
+        Create a website to showcase an English tutor’s services, strengthen
+        their brand, and help to convert potential clients
       </p>
     </section>
 
@@ -28,116 +25,89 @@ import titleImage from "../../../assets/projects/2/title.webp";
     >
       <section class="order-1 md:order-2 space-y-4">
         <h1 class="text-3xl font-extrabold">Challenges</h1>
-        <h2 class="text-xl font-extrabold">UI Design</h2>
+        <h2 class="text-xl font-extrabold">No-Code Built</h2>
         <p>
-          From the start, it was clear that information clarity would be one of
-          the top priorities. To achieve this, I decided to use <em
-            >Shadcn/ui</em
-          >, a clean-looking and proven React component library built on <em
-            >Radix UI</em
-          >, well known for its excellent accessibility.
+          Before starting this project I've been toying with an idea of building
+          frontend project with some sort of no code solution. I didn't know
+          much about them before I started, but I've seen many people on YT
+          crafting interfaces while moving pretty fast and that intrigued me.
+          After short research I came to conclusion <em>Webflow</em> is the product
+          I want to try. It was popular, had rich ecosystem of nicely designed templates
+          and its UI seemed well thought through and kind of reminded me <em
+            >Figma</em
+          >.
         </p>
         <p>
-          The visual theme, including the color system, was heavily inspired by
-          <em>Radix Themes'</em> style guide. While the app supports both light and
-          dark modes, I put most of my efforts into optimizing the dark mode experience,
-          considering the nightclub's working hours.
+          I started with going over some learning courses on <a
+            href="https://university.webflow.com/">Webflow University</a
+          >, which by the way were super high production value videos and were
+          also pretty funny. Once I felt accustomed with the tooling I started
+          building the site. Clicking and dragging elements felt little awkward
+          at first but after short while I got hang of it and honestly quite
+          liked it. Tinkering with controls again felt like I was in figma and
+          things building layout visually required very little cognitive effort.
+          I understood why this tool got so popular.
         </p>
         <p>
-          Because not all of the club's staff are fluent in either English or
-          Italian, there was a requirement to have the UI bilingual, supporting
-          both languages. I addressed this by keeping text information separate
-          and dynamically loading it based on the preferred option.
+          Once page was finished and hosting costs for page itself and <em
+            >CMS</em
+          > came into full picture, I realized my client won't be willing spending
+          as much for hosting, nor he should. That sparked an idea in me of migrating
+          the page to a hosting provider with lower fees. Fortunately Webflow platform
+          allows export into code natively. Even though the code isn't the prettiest,
+          it's readable and to some degree maintainable for little projects like
+          this one.
         </p>
       </section>
-
-      <div
-        class="order-2 self-center md:order-1 flex flex-col items-center justify-center text-3xl font-bold"
-      >
-        <img class="h-8" src="/icons/radix.svg" alt="Radix Themes logo" />
-        <span>+</span>
-        <div class="flex gap-1">
-          <img class="w-8" src="/icons/shadcn.svg" alt="Shadcn/ui logo" />
-          <span>shadcn/ui</span>
-        </div>
-      </div>
 
       <section class="order-3 space-y-4">
-        <h2 class="text-xl font-extrabold">Presenting Member Data</h2>
+        <h2 class="text-xl font-extrabold">Migrating to Astro + Sanity</h2>
         <p>
-          The club is quite popular, already having a substantial database of
-          over 20,000 members. For each member, it has to manage detailed
-          information, including personal, membership, suspension details, and
-          account notes. This data needs to be easily accessible and visually
-          clear for club staff across a variety of devices.
+          After careful consideration I decided to migrate project into <em
+            >Astro.js</em
+          >, content-focused framework with great load times. I got ok from
+          client and proceeded moving everything I could as it was and reworked
+          only the parts which were absolutely necessary due to their reliance
+          on Webflow platform. Things like an Offer component using dynamic
+          content or Contact Form.
         </p>
         <p>
-          To meet these expectations, I decided to use <em>TanStack Table</em>,
-          a type-safe React library that integrates seamlessly with our
-          component library and provides great features. For instance, it offers
-          client-side filtering, pagination, and more. To make browsing and
-          pagination more seamless, I used infinite scrolling backed by <em
-            >TanStack Query</em
-          > as a caching solution and state manager.
-        </p>
-      </section>
-      <div
-        class="order-4 max-w-80 rounded-lg overflow-hidden flex justify-self-center"
-      >
-        <img src="/images/iphone12.webp" alt="Members table iphone mockup" />
-      </div>
-
-      <section class="order-5 md:order-6 space-y-4">
-        <h2 class="text-xl font-extrabold">Efficient Check-in</h2>
-        <p>
-          During rush hour, the club often sees tens of visitors arriving
-          simultaneously. They all need to go through the check-in process
-          before entering. Hence, check-in can become a significant bottleneck
-          in the club’s operations. It involves searching for existing members,
-          renewing expired memberships, and registering new ones.
+          My choice for backend was headless CMS <em>Sanity.io</em>. It's well
+          established, has good UI and provides its own hosting for studio
+          access. For hosting static site I chose <em>Netlify</em> that provided
+          its own Form service which I used for the Contact Form. Its free tier included
+          free hosting and 100 notification emails a month, more than my client really
+          needed.
         </p>
         <p>
-          To streamline this process and make it as seamless as possible, the
-          app needed a great form UI. Fortunately, Shadcn/ui integrates well
-          with <em>React Hook Form</em>. This library is not only type-safe but
-          offers robust input validation and has become a <i>de facto</i> standard
-          in the React ecosystem. In addition to using a trusted library, I ensured
-          that the form fields can be quickly navigated using just a keyboard and
-          are optimized for use across a wide range of devices. Part of this process
-          was the creation of a custom <em>DateField</em> component, which I'm quite
-          proud of as it required quite a bit of work to feel right and allow quick
-          input.
+          Due to migration I lowered hosting fees to minimum for my client,
+          which was a big win. Although the process itself wasn't without its
+          negatives. Besides extra work, needed the biggest one in my opinion
+          was worsen code readability. Migrated code was using third party
+          symbols imported from Webflow which had no semantic meaning and it was
+          hard to understand what they actually do. This makes potential future
+          work in this codebase more expensive. Next overall code structure was
+          also not optimal, as it wasn't designed for Astro.js in the first
+          place. Arguably this could be improved by further refactoring which
+          would come with additional cost.
         </p>
       </section>
-
-      <div
-        class="order-6 md:order-5 max-w-80 flex rounded-lg overflow-hidden justify-self-center"
-      >
-        <img src="/images/add-member.webp" alt="Add member form" />
-      </div>
     </section>
     <section class="space-y-8 max-w-prose">
       <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
       <div class="space-y-4">
         <p>
-          Even though the project isn't finished yet, I already consider it a
-          significant learning experience. While working on it, I've discovered
-          how invaluable the type system can be, particularly for maintaining
-          and revisiting my own codebase. Returning to a project after even a
-          month-long break felt daunting at first, but having type-fueled code
-          suggestions made the process much easier. It helped me to quickly
-          orient myself in the code and reduce uncertainty and second-guessing.
+          Even though this project wasn't technically difficult at its core it
+          helped me to widen my horizons in Frontend quite a bit. I've learned
+          about no-code solution to a website design and I realized that even if
+          it can feel nice to build interfaces via GUI, it's probably not for me
+          as it has significant on my coding skills.
         </p>
         <p>
-          I also delved deeper into working with forms. Optimizing them for the
-          check-in process had its own set of challenges. Figuring out what to
-          improve and how to implement those improvements was a rewarding
-          journey.
-        </p>
-        <p>
-          Finally, I got to know some very cool technologies like React Hook
-          Form, TanStack Table, and TanStack Query. I'll definitely be diving
-          deeper into them and using them more often.
+          By working on this project I've discovered various complications which
+          can arise during migrations from one tech stack to another. I'm much
+          more careful now considering various options and their impact before I
+          commit my project to some technology in particular.
         </p>
       </div>
     </section>
