@@ -1,15 +1,9 @@
 {
-  "title": "Sudoku Cruncher",
-  "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt itaque explicabo, obcaecati doloremque culpa officiis iusto libero totam non quae.",
+  "title": "Tailwind Theme Gen",
+  "description": "A Figma Plugin that generates Tailwind Theme based on Figma design tokens",
   "cover": "./cover.webp",
   "coverAlt": "",
-  "repo": "https://github.com/raswonders/lanagrafica-fe",
-  "site": "https://lanagrafica-fe.vercel.app/",
-  "stack": [
-    "Typescript",
-    "React",
-    "React Router",
-    "Tanstack Query",
-    "Tanstack Table"
-  ]
+  "repo": "https://github.com/raswonders/figma-to-tailwind-theme",
+  "site": "https://www.figma.com/community/plugin/1384511746402383895/tailwind-theme-gen",
+  "stack": ["Typescript", "React", "Figma"]
 }
