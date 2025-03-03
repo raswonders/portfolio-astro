@@ -1,6 +1,6 @@
 {
   "title": "Tibi English",
-  "description": "Tibi English is a responsive landing page for an English lector, originally designed and built in Webflow, later converted into Astro.js project with Sanity.io for dynamic content management.",
+  "description": "Tibi English a responsive landing page for an English tutor, originally designed and built in Webflow, later converted into Astro.js project with Sanity.io for dynamic content management.",
   "cover": "./cover.webp",
   "coverAlt": "",
   "repo": "https://github.com/raswonders/tibi-english",
