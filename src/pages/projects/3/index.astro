@@ -4,6 +4,7 @@ import Layout from "../../../layouts/Layout.astro";
 import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 import { Image } from "astro:assets";
 import titleImage from "../../../assets/projects/3/title.webp";
+import figmaImage from "../../../assets/projects/3/figma.webp";
 ---
 
 <Layout>
@@ -16,6 +17,7 @@ import titleImage from "../../../assets/projects/3/title.webp";
         alt="Tailwind Theme Gen mockup"
       />
     </div>
+
     <section class="space-y-8 max-w-prose">
       <h1 class="text-3xl font-extrabold">Project's Goal</h1>
       <p>
@@ -27,7 +29,7 @@ import titleImage from "../../../assets/projects/3/title.webp";
     <section
       class="grid md:grid-cols-2 gap-y-16 md:gap-y-32 gap-x-8 items-start"
     >
-      <section class="order-1 md:order-2 space-y-4">
+      <section class="space-y-4">
         <h1 class="text-3xl font-extrabold">Origin Story</h1>
         <p>
           <em>Figma</em> is a design tool that I tend to use quite often. When I
@@ -45,7 +47,11 @@ import titleImage from "../../../assets/projects/3/title.webp";
         </p>
       </section>
 
-      <section class="order-2 md:order-2 space-y-4">
+      <div class="md:col-span-2 md:max-w-5xl rounded-lg overflow-hidden flex justify-self-center">
+        <Image src={figmaImage} alt="Figma Screenshot" />
+      </div>
+
+      <section class="space-y-4">
         <h1 class="text-3xl font-extrabold">Challenges</h1>
         <h2 class="text-xl font-extrabold">Learning Figma Internals</h2>
         <p>
@@ -81,15 +87,9 @@ import titleImage from "../../../assets/projects/3/title.webp";
           was a lot of fun. It reminded me of my networking job at Red Hat.
         </p>
       </section>
-
-      <div class="order-3 row-span-2">
-        <div
-          class="max-w-80 rounded-lg overflow-hidden justify-self-center drop-shadow-md"
-        >
-        </div>
-      </div>
     </section>
-    <section class="order-3 space-y-8 max-w-prose">
+
+    <section class="space-y-8 max-w-prose">
       <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
       <div class="space-y-4">
         <p>
@@ -100,7 +100,7 @@ import titleImage from "../../../assets/projects/3/title.webp";
         </p>
         <p></p>
       </div>
-      <section class="order-3 space-y-8 max-w-prose">
+      <section class="space-y-8 max-w-prose">
         <h1 class="text-3xl font-extrabold">Future Plans</h1>
         <div class="space-y-4">
           <p>
