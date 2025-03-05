@@ -37,6 +37,12 @@ import { Image } from "astro:assets";
     menuMobile?.classList.toggle("hidden");
   });
 
+  menuMobile?.addEventListener("click", (event) => {
+    if (event.target instanceof HTMLAnchorElement) {
+      menuMobile?.classList.toggle("hidden");
+    }
+  });
+
   window.addEventListener("click", (event) => {
     if (!navbar || !menuMobile) return;
 
