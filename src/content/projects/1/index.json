@@ -1,8 +1,8 @@
 {
   "title": "Club 101 Management App",
   "description": "Club 101 Management App streamlines membership registration, check-ins, and data handling for a thriving private nightclub in Rome.",
-  "cover": "./cover.webp",
-  "coverAlt": "",
+  "cover": "./cover.png",
+  "coverAlt": "Club 101 Management App",
   "repo": "https://github.com/raswonders/lanagrafica-fe",
   "site": "https://lanagrafica-fe.vercel.app/",
   "stack": [
