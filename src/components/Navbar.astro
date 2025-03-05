@@ -3,7 +3,7 @@ import menuIcon from "../assets/menu.svg";
 import { Image } from "astro:assets";
 ---
 
-<nav id="navbar" class="fixed flex justify-center px-4 md:px-24 w-full bg-white/70 backdrop-blur-lg">
+<nav id="navbar" class="fixed flex flex-col justify-center px-4 md:px-24 w-full bg-white/70 backdrop-blur-lg">
   <div class="h-20 grow flex justify-between items-center max-w-screen-2xl">
     <span class="text-base font-black">Rastislav Hepner.</span>
 
@@ -18,7 +18,7 @@ import { Image } from "astro:assets";
     </menu>
   </div>
 
-  <menu id="menu-content" class="hidden md:hidden space-y-2">
+  <menu id="menu-content" class="hidden space-y-2">
     <li><a class="block p-2" href="/#about">About me</a></li>
     <li><a class="block p-2" href="/#projects">Projects</a></li>
     <li><a class="block p-2" href="/#contact">Contact</a></li>
