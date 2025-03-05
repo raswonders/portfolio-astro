@@ -3,7 +3,10 @@ import menuIcon from "../assets/menu.svg";
 import { Image } from "astro:assets";
 ---
 
-<nav id="navbar" class="fixed flex flex-col justify-center px-4 md:px-24 w-full bg-white/70 backdrop-blur-lg">
+<nav
+  id="navbar"
+  class="fixed flex flex-col justify-center px-4 md:px-24 w-full bg-white/70 backdrop-blur-lg"
+>
   <div class="h-20 grow flex justify-between items-center max-w-screen-2xl">
     <span class="text-base font-black">Rastislav Hepner.</span>
 
@@ -12,34 +15,34 @@ import { Image } from "astro:assets";
     </button>
 
     <menu class="hidden md:flex">
-      <li><a class="block p-2" href="/#about">About me</a></li>
-      <li><a class="block p-2" href="/#projects">Projects</a></li>
-      <li><a class="block p-2" href="/#contact">Contact</a></li>
+      <a class="block p-2" href="/#about">About me</a>
+      <a class="block p-2" href="/#projects">Projects</a>
+      <a class="block p-2" href="/#contact">Contact</a>
     </menu>
   </div>
 
-  <menu id="menu-content" class="hidden space-y-2">
-    <li><a class="block p-2" href="/#about">About me</a></li>
-    <li><a class="block p-2" href="/#projects">Projects</a></li>
-    <li><a class="block p-2" href="/#contact">Contact</a></li>
+  <menu id="menu-mobile" class="hidden pb-4">
+    <a class="block py-4" href="/#about">About me</a>
+    <a class="block py-4" href="/#projects">Projects</a>
+    <a class="block py-4" href="/#contact">Contact</a>
   </menu>
 </nav>
 
 <script>
   const navbar = document.getElementById("navbar");
   const menuToggle = document.getElementById("menu-toggle");
-  const menuContent = document.getElementById("menu-content");
+  const menuMobile = document.getElementById("menu-mobile");
 
   menuToggle?.addEventListener("click", () => {
-    menuContent?.classList.toggle("hidden");
+    menuMobile?.classList.toggle("hidden");
   });
 
   window.addEventListener("click", (event) => {
-    if (!navbar || !menuContent) return;
+    if (!navbar || !menuMobile) return;
 
     const isInside = navbar.contains(event.target as Node);
     if (!isInside) {
-      menuContent.classList.add("hidden");
+      menuMobile.classList.add("hidden");
     }
   });
 </script>
