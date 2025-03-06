@@ -20,7 +20,7 @@ if (!project) {
 ---
 
 <PageLayout>
-  <header class="flex flex-col space-y-8 md:space-y-16 max-w-prose">
+  <article class="flex flex-col space-y-8 md:space-y-16 max-w-prose">
     <Heading>
       {project.data.title}
     </Heading>
@@ -48,10 +48,10 @@ if (!project) {
         </div>
       </div>
     </div>
-  </header>
-  <main class="space-y-16 md:space-y-32">
+  </article>
+  <article class="space-y-16 md:space-y-32">
     <slot />
-  </main>
+  </article>
   <Projects projects={projects.filter((project) => project.id !== id)} />
 </PageLayout>
 <ProjectFooter />
