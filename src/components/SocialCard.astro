@@ -1,0 +1,33 @@
+---
+import Github from "./icons/Github.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+
+const variants = [
+  {
+    id: "github",
+    title: "Github",
+    href: "https://github.com/raswonders",
+    icon: Github,
+  },
+  {
+    id: "linkedin",
+    title: "LinkedIn",
+    href: "https://www.linkedin.com/in/rastislavhepner/",
+    icon: LinkedIn,
+  },
+];
+
+const { id } = Astro.props;
+const variant = variants.filter((item) => item.id === id)[0];
+const Icon = variant?.icon;
+---
+
+<a
+  id={variant.id}
+  class="w-20 h-20 rounded-xl p-2 text-xs flex flex-col justify-between bg-slate-400/20"
+  target="_blank"
+  href={variant.href}
+>
+  <span>{variant.title}</span>
+  <Icon />
+</a>

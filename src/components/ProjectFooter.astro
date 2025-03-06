@@ -1,8 +1,6 @@
 ---
 import CTAButton from "./CTAButton.astro";
-import Github from "./icons/Github.astro";
-import LinkedIn from "./icons/LinkedIn.astro";
-import Twitter from "./icons/Twitter.astro";
+import SocialCard from "./SocialCard.astro";
 ---
 
 <section id="contact" class="bg-black px-4 md:px-24 py-20">
@@ -15,23 +13,12 @@ import Twitter from "./icons/Twitter.astro";
         <span class="text-lg text-slate-500 font-normal">Brno, CZ</span>
       </div>
       <div class="flex text-white gap-2 justify-center md:justify-normal">
-        <a id="github" target="_blank" href="https://github.com/raswonders">
-          <Github />
-        </a>
-        <a
-          id="linkedin"
-          target="_blank"
-          href="https://www.linkedin.com/in/rastislavhepner/"
-        >
-          <LinkedIn />
-        </a>
-        <a id="twitter" target="_blank" href="https://x.com/raswonders">
-          <Twitter />
-        </a>
+        <SocialCard id="github" />
+        <SocialCard id="linkedin" />
       </div>
-    </div>
-    <div class="flex justify-end items-start">
-      <CTAButton href="/#contact" variant="light">Let's talk</CTAButton>
+      <div class="flex justify-end items-start">
+        <CTAButton href="/#contact" variant="light">Let's talk</CTAButton>
+      </div>
     </div>
   </div>
 </section>
