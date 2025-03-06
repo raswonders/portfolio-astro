@@ -2,7 +2,7 @@
   "title": "Tailwind Theme Gen",
   "description": "A Figma Plugin that generates Tailwind Theme based on Figma design tokens",
   "cover": "./cover.webp",
-  "coverAlt": "",
+  "coverAlt": "Tailwind Theme Generator",
   "repo": "https://github.com/raswonders/figma-to-tailwind-theme",
   "site": "https://www.figma.com/community/plugin/1384511746402383895/tailwind-theme-gen",
   "stack": ["Typescript", "React", "Figma"]
