@@ -19,23 +19,28 @@ interface Props {
 const { fields } = Astro.props;
 ---
 
-<section id="contact" class="bg-black px-4 md:px-24 py-32">
-  <div class="grid md:grid-cols-2 gap-16 max-w-screen-2xl mx-auto">
+<section
+  id="contact"
+  class="bg-black px-4 md:px-24 py-32 pb-8 space-y-8"
+>
+  <div
+    class="flex flex-col md:flex-row p-4 md:p-8 gap-8 rounded-xl bg-slate-400/20"
+  >
     <Heading>
       <span class="text-white"
         >Let's build something <span class="text-slate-500">together</span
         ></span
       >
     </Heading>
-    <ContactForm fields={fields} />
-    <div
-      class="flex md:col-span-2 gap-2 justify-between items-center"
-    >
-      <AuthorCard />
-      <div class="flex text-white gap-2 justify-center md:justify-normal">
-        <SocialCard id="github" />
-        <SocialCard id="linkedin" />
-      </div>
+    <div class="w-full">
+      <ContactForm fields={fields} />
+    </div>
+  </div>
+  <div class="flex gap-2 justify-between items-center">
+    <AuthorCard />
+    <div class="flex text-white gap-2 justify-center md:justify-normal">
+      <SocialCard id="github" />
+      <SocialCard id="linkedin" />
     </div>
   </div>
 </section>
