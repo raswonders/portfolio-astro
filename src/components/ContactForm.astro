@@ -24,7 +24,7 @@ const { fields } = Astro.props;
   <div class="flex flex-col space-y-2">
     <label for="name" class="text-slate-500">Name</label>
     <input
-      class="p-2 border outline-offset-4"
+      class="p-2 rounded-md border outline-offset-4"
       name="name"
       id="name"
       type="text"
@@ -41,7 +41,7 @@ const { fields } = Astro.props;
   <div class="flex flex-col space-y-2">
     <label for="email" class="text-slate-500">Email</label>
     <input
-      class="p-2 border outline-offset-4"
+      class="p-2 rounded-md border outline-offset-4"
       name="email"
       id="email"
       type="email"
@@ -59,7 +59,7 @@ const { fields } = Astro.props;
   <div class="flex flex-col space-y-2">
     <label for="message" class="text-slate-500">Message</label>
     <textarea
-      class="p-2 border min-h-28 resize-y outline-offset-4"
+      class="p-2 rounded-md border min-h-28 resize-y outline-offset-4"
       name="message"
       id="message"
       placeholder="">{fields.message?.value || ""}</textarea
@@ -73,7 +73,7 @@ const { fields } = Astro.props;
     }
   </div>
   <input
-    class="sm:place-self-end px-6 py-4 text-lg font-semibold bg-slate-300 text-black outline-offset-4"
+    class="sm:place-self-end px-6 py-4 rounded-lg text-lg font-semibold bg-slate-300 text-black outline-offset-4"
     type="submit"
     value="Send"
     id="form-submit"
