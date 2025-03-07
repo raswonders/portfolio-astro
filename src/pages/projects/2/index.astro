@@ -1,121 +1,115 @@
 ---
-import Navbar from "../../../components/Navbar.astro";
-import Layout from "../../../layouts/Layout.astro";
 import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 import { Image } from "astro:assets";
 import titleImage from "../../../assets/projects/2/title.webp";
 import fullPageImage from "../../../assets/projects/2/tibi-full.webp";
 ---
 
-<Layout>
-  <Navbar />
-  <ProjectLayout id="2">
-    <div class="col-span-2">
-      <Image src={titleImage} alt="Tibi-English.sk" />
-    </div>
-    <section class="space-y-8 max-w-prose">
-      <h1 class="text-3xl font-extrabold">Project's Goal</h1>
+<ProjectLayout id="2">
+  <div class="col-span-2">
+    <Image src={titleImage} alt="Tibi-English.sk" />
+  </div>
+  <section class="space-y-8 max-w-prose">
+    <h1 class="text-3xl font-extrabold">Project's Goal</h1>
+    <p>
+      Create a website to showcase an English tutor’s services, strengthen their
+      brand, and help convert potential clients.
+    </p>
+  </section>
+
+  <section class="grid md:grid-cols-2 gap-y-16 md:gap-y-32 gap-x-8 items-start">
+    <section class="order-1 md:order-2 space-y-4">
+      <h1 class="text-3xl font-extrabold">Challenges</h1>
+      <h2 class="text-xl font-extrabold">No-Code Built</h2>
       <p>
-        Create a website to showcase an English tutor’s services, strengthen
-        their brand, and help convert potential clients.
+        Before starting this project, I had been toying with the idea of
+        building a frontend project with some sort of no-code solution. I didn't
+        know much about them before I started, but I'd seen many people on
+        YouTube crafting interfaces while moving pretty fast, and that intrigued
+        me. After a short research, I concluded that <em>Webflow</em> is the product
+        I wanted to try. It was popular, had a rich ecosystem of nicely designed
+        templates, and its UI seemed well thought through and kind of reminded me
+        of <em>Figma</em>.
+      </p>
+      <p>
+        I started by going over some learning courses on <a
+          href="https://university.webflow.com/">Webflow University</a
+        >, which, by the way, were super high production value and were also
+        pretty funny. Once I was accustomed to the tooling, I started building
+        the site. Clicking and dragging elements felt a little awkward at first,
+        but after a short while, I got the hang of it and honestly quite liked
+        it. Tinkering with controls again felt like I was in Figma, and building
+        the layout visually required very little cognitive effort. I understood
+        why this tool got so popular.
+      </p>
+      <p>
+        Once the page was finished and hosting costs for the page itself and its <em
+          >CMS</em
+        >
+        came into full picture, I realized my client wouldn't be willing to spend
+        as much for hosting, nor should he. That sparked an idea in me of migrating
+        the page to a hosting provider with lower fees. Fortunately, the Webflow
+        platform supports export into code natively.
       </p>
     </section>
 
-    <section
-      class="grid md:grid-cols-2 gap-y-16 md:gap-y-32 gap-x-8 items-start"
-    >
-      <section class="order-1 md:order-2 space-y-4">
-        <h1 class="text-3xl font-extrabold">Challenges</h1>
-        <h2 class="text-xl font-extrabold">No-Code Built</h2>
-        <p>
-          Before starting this project, I had been toying with the idea of
-          building a frontend project with some sort of no-code solution. I
-          didn't know much about them before I started, but I'd seen many people
-          on YouTube crafting interfaces while moving pretty fast, and that
-          intrigued me. After a short research, I concluded that <em>Webflow</em
-          > is the product I wanted to try. It was popular, had a rich ecosystem
-          of nicely designed templates, and its UI seemed well thought through and
-          kind of reminded me of <em>Figma</em>.
-        </p>
-        <p>
-          I started by going over some learning courses on <a
-            href="https://university.webflow.com/">Webflow University</a
-          >, which, by the way, were super high production value and were also
-          pretty funny. Once I was accustomed to the tooling, I started building
-          the site. Clicking and dragging elements felt a little awkward at
-          first, but after a short while, I got the hang of it and honestly
-          quite liked it. Tinkering with controls again felt like I was in
-          Figma, and building the layout visually required very little cognitive
-          effort. I understood why this tool got so popular.
-        </p>
-        <p>
-          Once the page was finished and hosting costs for the page itself and
-          its <em>CMS</em>
-          came into full picture, I realized my client wouldn't be willing to spend
-          as much for hosting, nor should he. That sparked an idea in me of migrating
-          the page to a hosting provider with lower fees. Fortunately, the Webflow
-          platform supports export into code natively.
-        </p>
-      </section>
-
-      <div class="order-2 row-span-2">
-        <div class="max-w-80 rounded-lg overflow-hidden justify-self-center drop-shadow-md">
-          <Image src={fullPageImage} alt="Tibi English full page mockup" />
-        </div>
+    <div class="order-2 row-span-2">
+      <div
+        class="max-w-80 rounded-lg overflow-hidden justify-self-center drop-shadow-md"
+      >
+        <Image src={fullPageImage} alt="Tibi English full page mockup" />
       </div>
+    </div>
 
-      <section class="order-3 space-y-4">
-        <h2 class="text-xl font-extrabold">Migrating to Astro + Sanity</h2>
-        <p>
-          After careful consideration, I decided to migrate the project into <em
-            >Astro.js</em
-          >, a content-focused framework with great load times. I got the okay
-          from the client and proceeded to move everything I could as it was and
-          reworked only the parts that were absolutely necessary due to their
-          dependence on the Webflow platform. It was things like an Offer
-          component using dynamic content or the Contact Form.
-        </p>
-        <p>
-          My choice for the backend was a headless CMS called <em>Sanity.io</em
-          >. It was well established, had a good UI, and provided its own
-          hosting for studio access. For hosting the static site, I chose <em
-            >Netlify</em
-          >, which provided its own Form service that I used for the Contact
-          Form. Its free tier included free hosting and 100 notification emails
-          a month, more than my client really needed.
-        </p>
-        <p>
-          As a result of the migration, I managed to lower hosting fees to a
-          minimum , which was a big win for my client. Although the process
-          itself wasn't without its negatives. Besides the extra work needed,
-          the biggest one in my opinion was worsened code readability. The
-          migrated code was using third-party symbols imported from Webflow,
-          which had no semantic meaning and it was hard to understand what they
-          actually do. This makes potential future work in this codebase more
-          expensive. Next, the overall code structure was also not optimal, as
-          it wasn't designed for Astro.js in the first place. Arguably, this
-          could be improved by further refactoring, which would come with
-          additional cost.
-        </p>
-      </section>
+    <section class="order-3 space-y-4">
+      <h2 class="text-xl font-extrabold">Migrating to Astro + Sanity</h2>
+      <p>
+        After careful consideration, I decided to migrate the project into <em
+          >Astro.js</em
+        >, a content-focused framework with great load times. I got the okay
+        from the client and proceeded to move everything I could as it was and
+        reworked only the parts that were absolutely necessary due to their
+        dependence on the Webflow platform. It was things like an Offer
+        component using dynamic content or the Contact Form.
+      </p>
+      <p>
+        My choice for the backend was a headless CMS called <em>Sanity.io</em>.
+        It was well established, had a good UI, and provided its own hosting for
+        studio access. For hosting the static site, I chose <em>Netlify</em>,
+        which provided its own Form service that I used for the Contact Form.
+        Its free tier included free hosting and 100 notification emails a month,
+        more than my client really needed.
+      </p>
+      <p>
+        As a result of the migration, I managed to lower hosting fees to a
+        minimum , which was a big win for my client. Although the process itself
+        wasn't without its negatives. Besides the extra work needed, the biggest
+        one in my opinion was worsened code readability. The migrated code was
+        using third-party symbols imported from Webflow, which had no semantic
+        meaning and it was hard to understand what they actually do. This makes
+        potential future work in this codebase more expensive. Next, the overall
+        code structure was also not optimal, as it wasn't designed for Astro.js
+        in the first place. Arguably, this could be improved by further
+        refactoring, which would come with additional cost.
+      </p>
     </section>
-    <section class="space-y-8 max-w-prose">
-      <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
-      <div class="space-y-4">
-        <p>
-          Even though this project wasn't technically difficult at its core, it
-          helped me to widen my horizons in frontend development quite a bit.
-          I've learned about no-code solutions for website design and I realized
-          that even if it can feel nice to build interfaces via GUI, it's
-          probably not for me as it takes a toll on my coding skills.
-        </p>
-        <p>
-          By working on this project, I've discovered various complications that
-          can arise during migrations from one tech stack to another. I'm much
-          more careful now considering various options and their impact before I
-          commit my project to some technology in particular.
-        </p>
-      </div>
-    </section>
-  </ProjectLayout>
-</Layout>
+  </section>
+  <section class="space-y-8 max-w-prose">
+    <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
+    <div class="space-y-4">
+      <p>
+        Even though this project wasn't technically difficult at its core, it
+        helped me to widen my horizons in frontend development quite a bit. I've
+        learned about no-code solutions for website design and I realized that
+        even if it can feel nice to build interfaces via GUI, it's probably not
+        for me as it takes a toll on my coding skills.
+      </p>
+      <p>
+        By working on this project, I've discovered various complications that
+        can arise during migrations from one tech stack to another. I'm much
+        more careful now considering various options and their impact before I
+        commit my project to some technology in particular.
+      </p>
+    </div>
+  </section>
+</ProjectLayout>
