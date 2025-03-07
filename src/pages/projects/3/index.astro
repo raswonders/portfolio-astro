@@ -1,116 +1,110 @@
 ---
-import Navbar from "../../../components/Navbar.astro";
-import Layout from "../../../layouts/Layout.astro";
 import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 import { Image } from "astro:assets";
 import titleImage from "../../../assets/projects/3/title.webp";
 import figmaImage from "../../../assets/projects/3/figma.webp";
 ---
 
-<Layout>
-  <Navbar />
-  <ProjectLayout id="3">
-    <div class="col-span-2">
-      <Image
-        class="border rounded-2xl"
-        src={titleImage}
-        alt="Tailwind Theme Gen mockup"
-      />
-    </div>
+<ProjectLayout id="3">
+  <div class="col-span-2">
+    <Image
+      class="border rounded-2xl"
+      src={titleImage}
+      alt="Tailwind Theme Gen mockup"
+    />
+  </div>
 
-    <section class="space-y-8 max-w-prose">
-      <h1 class="text-3xl font-extrabold">Project's Goal</h1>
+  <section class="space-y-8 max-w-prose">
+    <h1 class="text-3xl font-extrabold">Project's Goal</h1>
+    <p>
+      This plugin aims to speed up the process of converting Figma design tokens
+      into a Tailwind theme.
+    </p>
+  </section>
+
+  <section class="grid md:grid-cols-2 gap-y-16 md:gap-y-32 gap-x-8 items-start">
+    <section class="space-y-4">
+      <h1 class="text-3xl font-extrabold">Origin Story</h1>
       <p>
-        This plugin aims to speed up the process of converting Figma design
-        tokens into a Tailwind theme.
+        <em>Figma</em> is a design tool that I tend to use quite often. When I learned
+        about the Figma team releasing a dev mode <em>VSCode</em> plugin, it got
+        me excited about possible integrations. Around that time, I was also into
+        doing <a
+          class="underline underline-offset-2"
+          target="_blank"
+          href="https://www.frontendmentor.io/">Frontend Mentor</a
+        > challenges. This practice mainly consisted of taking Figma designs and
+        implementing them with <em>React</em> and <em>Tailwind</em>. Each time I
+        started a new project, I found myself repeatedly copying design tokens
+        from Figma into my Tailwind theme. That made me think, wouldn't it be
+        great to have a tool that could do it for me?
       </p>
     </section>
 
-    <section
-      class="grid md:grid-cols-2 gap-y-16 md:gap-y-32 gap-x-8 items-start"
+    <div
+      class="md:col-span-2 md:max-w-5xl rounded-lg overflow-hidden flex justify-self-center"
     >
-      <section class="space-y-4">
-        <h1 class="text-3xl font-extrabold">Origin Story</h1>
-        <p>
-          <em>Figma</em> is a design tool that I tend to use quite often. When I
-          learned about the Figma team releasing a dev mode <em>VSCode</em> plugin,
-          it got me excited about possible integrations. Around that time, I was
-          also into doing <a
-            class="underline underline-offset-2"
-            target="_blank"
-            href="https://www.frontendmentor.io/">Frontend Mentor</a
-          > challenges. This practice mainly consisted of taking Figma designs and
-          implementing them with <em>React</em> and <em>Tailwind</em>. Each time
-          I started a new project, I found myself repeatedly copying design
-          tokens from Figma into my Tailwind theme. That made me think, wouldn't
-          it be great to have a tool that could do it for me?
-        </p>
-      </section>
+      <Image src={figmaImage} alt="Figma Screenshot" />
+    </div>
 
-      <div class="md:col-span-2 md:max-w-5xl rounded-lg overflow-hidden flex justify-self-center">
-        <Image src={figmaImage} alt="Figma Screenshot" />
-      </div>
-
-      <section class="space-y-4">
-        <h1 class="text-3xl font-extrabold">Challenges</h1>
-        <h2 class="text-xl font-extrabold">Learning Figma Internals</h2>
-        <p>
-          As this was my first Figma plugin, I had to learn a lot about Figma's
-          Plugin API, its security, and release policy. While working on this, I
-          discovered a bunch of internal quirks and deepened my understanding of
-          two primary features used for design tokens in Figma,
-          <em>Styles</em> and <em>Variables</em>.
-        </p>
-        <h2 class="text-xl font-extrabold">ES6 Target</h2>
-        <p>
-          Figma's plugin environment supports the ES6 target. Before this
-          project, I always targeted evergreen browsers while using the latest
-          JS features. During this project, I came to realize that some built-in
-          syntax I'd been taking for granted didn't exist in ES6 yet and also it
-          cannot be transpiled to it. Hence, I had to work around it by using
-          alternatives. In the end, it wasn't hard but definitely caught me by
-          surprise. I always thought code like <code>Object.entries()</code> must
-          have been part of JS forever.
-        </p>
-        <h2 class="text-xl font-extrabold">Cross-Origin Communication</h2>
-        <p>
-          Due to security reasons, plugins in Figma usually consist of two
-          parts. The first is the Figma plugin code, which runs inside a <em
-            >QuickJS</em
-          > sandbox and has very limited access to browser APIs. The second part
-          is the UI of a plugin, a web app with complete access to the browser but
-          effectively no access to Figma's APIs. Because of this division of labor,
-          in order for the plugin to work as a unit, these parts must communicate.
-          As they run each inside of a different origin, information must be exchanged
-          via the <code>window.postMessage</code> API. This was my first time implementing
-          cross-origin communication, and even though it had some intricacies, it
-          was a lot of fun. It reminded me of my networking job at Red Hat.
-        </p>
-      </section>
+    <section class="space-y-4">
+      <h1 class="text-3xl font-extrabold">Challenges</h1>
+      <h2 class="text-xl font-extrabold">Learning Figma Internals</h2>
+      <p>
+        As this was my first Figma plugin, I had to learn a lot about Figma's
+        Plugin API, its security, and release policy. While working on this, I
+        discovered a bunch of internal quirks and deepened my understanding of
+        two primary features used for design tokens in Figma,
+        <em>Styles</em> and <em>Variables</em>.
+      </p>
+      <h2 class="text-xl font-extrabold">ES6 Target</h2>
+      <p>
+        Figma's plugin environment supports the ES6 target. Before this project,
+        I always targeted evergreen browsers while using the latest JS features.
+        During this project, I came to realize that some built-in syntax I'd
+        been taking for granted didn't exist in ES6 yet and also it cannot be
+        transpiled to it. Hence, I had to work around it by using alternatives.
+        In the end, it wasn't hard but definitely caught me by surprise. I
+        always thought code like <code>Object.entries()</code> must have been part
+        of JS forever.
+      </p>
+      <h2 class="text-xl font-extrabold">Cross-Origin Communication</h2>
+      <p>
+        Due to security reasons, plugins in Figma usually consist of two parts.
+        The first is the Figma plugin code, which runs inside a <em>QuickJS</em>
+        sandbox and has very limited access to browser APIs. The second part is the
+        UI of a plugin, a web app with complete access to the browser but effectively
+        no access to Figma's APIs. Because of this division of labor, in order for
+        the plugin to work as a unit, these parts must communicate. As they run each
+        inside of a different origin, information must be exchanged via the <code
+          >window.postMessage</code
+        > API. This was my first time implementing cross-origin communication, and
+        even though it had some intricacies, it was a lot of fun. It reminded me
+        of my networking job at Red Hat.
+      </p>
     </section>
+  </section>
 
+  <section class="space-y-8 max-w-prose">
+    <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
+    <div class="space-y-4">
+      <p>
+        This was not the biggest project I have ever done, but it was quite
+        different from what I had been working on before. It taught me a lot
+        about the Figma development environment and I got to use techniques like
+        cross-origin communication between windows, which was cool.
+      </p>
+      <p></p>
+    </div>
     <section class="space-y-8 max-w-prose">
-      <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
+      <h1 class="text-3xl font-extrabold">Future Plans</h1>
       <div class="space-y-4">
         <p>
-          This was not the biggest project I have ever done, but it was quite
-          different from what I had been working on before. It taught me a lot
-          about the Figma development environment and I got to use techniques
-          like cross-origin communication between windows, which was cool.
+          I'm planning to keep working on this. As the next step, I'd like to
+          extend the range of tokens the plugin is able to convert. I hope that
+          more users will find this project useful as it grows in features.
         </p>
-        <p></p>
       </div>
-      <section class="space-y-8 max-w-prose">
-        <h1 class="text-3xl font-extrabold">Future Plans</h1>
-        <div class="space-y-4">
-          <p>
-            I'm planning to keep working on this. As the next step, I'd like to
-            extend the range of tokens the plugin is able to convert. I hope
-            that more users will find this project useful as it grows in
-            features.
-          </p>
-        </div>
-      </section>
     </section>
-  </ProjectLayout>
-</Layout>
+  </section>
+</ProjectLayout>
