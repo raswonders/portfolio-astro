@@ -1,11 +1,21 @@
 ---
+import Contact from "../components/Contact.astro";
+import Navbar from "../components/Navbar.astro";
+import { getContactFields } from "../utils";
+import Layout from "./Layout.astro";
 
+const contactFields = getContactFields(Astro.url.searchParams);
 ---
 
-<main class="px-4 md:px-24 py-32 bg-white">
-  <div
-    class="grid space-y-32 justify-center tracking-wide leading-loose max-w-screen-2xl mx-auto"
-  >
-    <slot />
-  </div>
-</main>
+<Layout>
+  <Navbar />
+  <main class="px-4 md:px-24 py-32 bg-white">
+    <div
+      class="grid space-y-32 justify-center tracking-wide leading-loose max-w-screen-2xl mx-auto"
+    >
+      <slot />
+    </div>
+  </main>
+  <Contact fields={contactFields} />
+</Layout>
+<Navbar />
