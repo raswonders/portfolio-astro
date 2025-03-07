@@ -41,3 +41,34 @@ export async function sendMail(data: FormData) {
     headers: { Location: "/thank-you" },
   });
 }
+
+export function getContactFields(searchParams: URLSearchParams) {
+  const fields = {
+    name: { value: "", error: "" },
+    email: { value: "", error: "" },
+    message: { value: "", error: "" },
+  };
+
+  fields.name.value = searchParams.get("name")
+    ? (searchParams.get("name") as string)
+    : "";
+  fields.name.error = searchParams.get("nameError")
+    ? (searchParams.get("nameError") as string)
+    : "";
+
+  fields.email.value = searchParams.get("email")
+    ? (searchParams.get("email") as string)
+    : "";
+  fields.email.error = searchParams.get("emailError")
+    ? (searchParams.get("emailError") as string)
+    : "";
+
+  fields.message.value = searchParams.get("message")
+    ? (searchParams.get("message") as string)
+    : "";
+  fields.message.error = searchParams.get("messageError")
+    ? (searchParams.get("emailError") as string)
+    : "";
+
+  return fields;
+}
