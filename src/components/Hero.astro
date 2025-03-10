@@ -13,16 +13,16 @@ const { class: className } = Astro.props;
 
 <section
   id="hero"
-  class={`h-screen grid gap-8 items-center sm:grid-cols-2 ${className || ""}`}
+  class={`h-screen flex flex-col md:gap-4 md:flex-row justify-center md:items-center overflow-hidden ${className || ""}`}
 >
+  <Image class="w-full md:w-1/2" src={profile} alt="Rastislav's profile" />
   <div class="flex flex-col items-start gap-8">
     <Heading>
-      <span>Hey, Welcome!</span>
-      <span>
-        I'm Rastislav, <span class="text-slate-500">Web Developer</span> from Brno
-      </span>
+      <p class="font-serif italic font-normal">
+        &ldquo;Hi, I'm Ras—a web developer crafting fast, accessible, and human
+        first web experiences.&rdquo;
+      </p>
     </Heading>
     <CTAButton href="/#contact" variant="dark">Let's talk</CTAButton>
   </div>
-  <Image src={profile} alt="Rastislav's profile picture" />
 </section>
