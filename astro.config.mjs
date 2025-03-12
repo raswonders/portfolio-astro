@@ -1,14 +1,14 @@
 // @ts-check
 import { defineConfig, passthroughImageService } from "astro/config";
-
-import tailwind from "@astrojs/tailwind";
-
+import tailwindcss from "@tailwindcss/vite";
 import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
   devToolbar: { enabled: false },
-  integrations: [tailwind()],
   server: { port: 3000, host: true },
   output: "server",
   adapter: netlify(),
