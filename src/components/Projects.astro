@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import ProjectCard from "./ProjectCard.astro";
+import tibiMobileIphone from "../assets/projects/2/mockup-iphone.png";
+import tibiDesktopMockup from "../assets/projects/2/mockup-desktop.png";
 ---
 
 <section id="projects" class="flex flex-col items-center pt-44 space-y-16">
@@ -9,8 +12,23 @@ import ProjectCard from "./ProjectCard.astro";
   <div
     class="w-full flex flex-col gap-y-16 items-center tracking-wide leading-normal"
   >
+    <ProjectCard projectId="2">
+      <div class="relative grow">
+        <div
+          class=`hidden -rotate-2 left-6 -bottom-16 translate absolute z-10 md:w-4/12 max-w-60 md:flex justify-center border-8 border-white rounded-xl bg-blue-300`
+        >
+          <Image class="max-w-3/4 my-8" alt="" src={tibiMobileIphone} />
+        </div>
+        <div
+          class="p-1 relative md:max-w-5/6 -bottom-1/12 md:-bottom-2/12 -left-1/12 md:left-3/12 -rotate-6 md:rotate-3 bg-white rounded-xl "
+        >
+          <div class="p-6 bg-neutral-200 rounded-xl">
+            <Image class="" alt="" src={tibiDesktopMockup} />
+          </div>
+        </div>
+      </div>
+    </ProjectCard>
     <ProjectCard projectId="1" />
-    <ProjectCard projectId="2" />
     <ProjectCard projectId="3" />
   </div>
 </section>
