@@ -5,6 +5,7 @@ import tibiMobileIphone from "../assets/projects/2/mockup-iphone.png";
 import tibiDesktopMockup from "../assets/projects/2/mockup-desktop.png";
 import club101DesktopMockup from "../assets/projects/1/mockup-desktop.png";
 import club101MobileMockup from "../assets/projects/1/mockup-iphone.png";
+import figmaTitle from "../assets/projects/3/title.webp";
 ---
 
 <section id="projects" class="flex flex-col items-center pt-44 space-y-16">
@@ -41,7 +42,15 @@ import club101MobileMockup from "../assets/projects/1/mockup-iphone.png";
           <Image class="p-4" alt="" src={tibiDesktopMockup} />
         </div>
       </div>
-      <ProjectCard projectId="3" />
+    </ProjectCard>
+    <ProjectCard projectId="3">
+      <div class="relative flex items-end md:px-8 translate-y-10">
+        <div
+          class="ease-out duration-500 md:group-hover:-translate-y-10 md:group-hover:rotate-6 md:translate-y-14 relative -left-8 md:left-2 -rotate-6 md:rotate-2 border-4 border-white rounded-xl bg-neutral-200"
+        >
+          <Image class="p-4" alt="" src={figmaTitle} />
+        </div>
+      </div>
     </ProjectCard>
   </div>
 </section>
