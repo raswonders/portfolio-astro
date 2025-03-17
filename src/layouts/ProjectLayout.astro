@@ -51,5 +51,5 @@ if (!project) {
   <article class="space-y-16 md:space-y-32">
     <slot />
   </article>
-  <Projects projects={projects.filter((project) => project.id !== id)} />
+  <Projects projectId={id} />
 </PageLayout>
