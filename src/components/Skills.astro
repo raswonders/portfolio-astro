@@ -10,8 +10,8 @@ import ViteIcon from "../assets/ViteIcon.svg";
 import AstroIcon from "../assets/AstroIcon.svg";
 
 const skills = [
-  { title: "Html5", icon: HtmlIcon, alt: "" },
-  { title: "Css3", icon: CssIcon, alt: "" },
+  { title: "HTML", icon: HtmlIcon, alt: "" },
+  { title: "CSS", icon: CssIcon, alt: "" },
   { title: "Javascript", icon: JsIcon, alt: "" },
   { title: "Typescript", icon: TsIcon, alt: "" },
   { title: "React", icon: ReactIcon, alt: "" },
@@ -26,7 +26,7 @@ const skills = [
   <div class="flex gap-4 flex-wrap justify-center content-center">
     {
       skills.map((item) => (
-        <div class="p-4 flex justify-center items-center gap-2 rounded-lg border grayscale hover:grayscale-0">
+        <div class="p-4 flex justify-center items-center gap-2 rounded-lg border hover:grayscale-0">
           <Image src={item.icon} alt="" />
           <div>{item.title}</div>
         </div>
