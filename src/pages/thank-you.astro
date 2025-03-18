@@ -1,18 +1,14 @@
 ---
+import CTAButton from "../components/CTAButton.astro";
 import Heading from "../components/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="grid gap-4 h-screen place-content-center text-center">
+  <div class="h-screen grid gap-4 place-content-center text-center">
     <Heading>Thank you</Heading>
-    <p class="text-lg text-slate-500">
-      Thanks for reaching out! I'll get back to you soon.
-    </p>
-    <div>
-      <button class="px-4 py-2" onclick="window.location.href = '/'">
-        &larr; Back to Home
-      </button>
-    </div>
+    <p class="text-lg">Thanks for reaching out! I'll get back to you soon.</p>
+    <div class="mt-16"></div>
+    <CTAButton href={`/`}> &larr; Back to Home </CTAButton>
   </div>
 </Layout>
