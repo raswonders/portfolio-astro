@@ -6,11 +6,10 @@ interface Props {
 
 const { href } = Astro.props;
 ---
-
 <a
   role="button"
   tabindex="0"
   href={href}
-  class=`px-6 py-4 rounded-lg text-lg font-bold bg-black/80 text-white outline-offset-4 outline-neutral-500`
+  class=`transition-all hover:scale-105 hover:shadow-lg px-6 py-4 rounded-lg text-lg font-bold bg-black/80 text-white outline-offset-4 outline-neutral-500`
   ><slot /></a
 >
