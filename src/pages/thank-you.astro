@@ -5,10 +5,12 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="h-screen grid gap-4 place-content-center text-center">
-    <Heading>Thank you</Heading>
-    <p class="text-lg">Thanks for reaching out! I'll get back to you soon.</p>
-    <div class="mt-16"></div>
-    <CTAButton href={`/`}> &larr; Back to Home </CTAButton>
+  <div class="h-screen grid place-content-center text-center">
+    <div class="flex flex-col items-center gap-4">
+      <Heading>Thank you</Heading>
+      <p class="text-lg">Thanks for reaching out! I'll get back to you soon.</p>
+      <div class="mt-16"></div>
+      <CTAButton href={`/`}> &larr; Back to Home </CTAButton>
+    </div>
   </div>
 </Layout>
