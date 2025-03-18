@@ -33,7 +33,11 @@ export async function sendMail(data: FormData) {
   });
 
   if (!response.ok) {
-    throw new Error(`Sending email has failed with status: ${response.status}`);
+    console.error(`${response.status} ${response.statusText}`);
+    return new Response(null, {
+      status: 303,
+      headers: { Location: "/oops" },
+    });
   }
 
   return new Response(null, {
