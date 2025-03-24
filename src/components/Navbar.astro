@@ -1,5 +1,5 @@
 ---
-import menuIcon from "../assets/icons/menuIcon.svg";
+import MenuIcon from "./icons/MenuIcon.astro";
 import { Image } from "astro:assets";
 ---
 
@@ -15,7 +15,7 @@ import { Image } from "astro:assets";
         >Rastislav Hepner</a
       >
       <button id="menu-toggle" class="p-4 md:hidden">
-        <Image src={menuIcon} alt="Menu icon" width={32} height={32} />
+        <MenuIcon class="text-red-500" width={32} height={32} />
       </button>
       <menu class="hidden md:flex">
         <a class="block p-2 rounded-md outline-neutral-500" href="/#story"
