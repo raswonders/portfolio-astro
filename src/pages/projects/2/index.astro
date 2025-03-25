@@ -3,6 +3,8 @@ import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 import { Image } from "astro:assets";
 import titleImage from "../../../assets/projects/2/title.webp";
 import fullPageImage from "../../../assets/projects/2/tibi-full.webp";
+import ProjectHeading from "../../../components/ProjectHeading.astro";
+import ProjectSubheading from "../../../components/ProjectSubheading.astro";
 ---
 
 <ProjectLayout id="2">
@@ -10,7 +12,7 @@ import fullPageImage from "../../../assets/projects/2/tibi-full.webp";
     <Image src={titleImage} alt="Tibi-English.sk" />
   </div>
   <section class="space-y-8 max-w-prose">
-    <h1 class="text-3xl font-extrabold">Project's Goal</h1>
+    <ProjectHeading>Project's Goal</ProjectHeading>
     <p>
       Create a website to showcase an English tutor’s services, strengthen their
       brand, and help convert potential clients.
@@ -19,8 +21,8 @@ import fullPageImage from "../../../assets/projects/2/tibi-full.webp";
 
   <section class="grid md:grid-cols-2 gap-y-16 md:gap-y-32 gap-x-8 items-start">
     <section class="order-1 md:order-2 space-y-4">
-      <h1 class="text-3xl font-extrabold">Challenges</h1>
-      <h2 class="text-xl font-extrabold">No-Code Built</h2>
+      <ProjectHeading>Challenges</ProjectHeading>
+      <ProjectSubheading>No-Code Built</ProjectSubheading>
       <p>
         Before starting this project, I had been toying with the idea of
         building a frontend project with some sort of no-code solution. I didn't
@@ -62,7 +64,7 @@ import fullPageImage from "../../../assets/projects/2/tibi-full.webp";
     </div>
 
     <section class="order-3 space-y-4">
-      <h2 class="text-xl font-extrabold">Migrating to Astro + Sanity</h2>
+      <ProjectSubheading>Migrating to Astro + Sanity</ProjectSubheading>
       <p>
         After careful consideration, I decided to migrate the project into <em
           >Astro.js</em
@@ -95,7 +97,8 @@ import fullPageImage from "../../../assets/projects/2/tibi-full.webp";
     </section>
   </section>
   <section class="space-y-8 max-w-prose">
-    <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
+    <h1 class="text-3xl font-extrabold"></h1>
+    <ProjectHeading>Lessons Learned</ProjectHeading>
     <div class="space-y-4">
       <p>
         Even though this project wasn't technically difficult at its core, it
