@@ -22,9 +22,9 @@ const { fields } = Astro.props;
   id="contact-form"
 >
   <div class="flex flex-col space-y-2">
-    <label for="name" class="text-neutral-500">Name</label>
+    <label for="name" class="text-gray-500">Name</label>
     <input
-      class="p-2 rounded-md border outline-offset-4 border-neutral-500 bg-white outline-neutral-500"
+      class="p-2 rounded-md border outline-offset-4 border-gray-500 bg-white outline-gray-500"
       name="name"
       id="name"
       type="text"
@@ -39,9 +39,9 @@ const { fields } = Astro.props;
     }
   </div>
   <div class="flex flex-col space-y-2">
-    <label for="email" class="text-neutral-500">Email</label>
+    <label for="email" class="text-gray-500">Email</label>
     <input
-      class="p-2 rounded-md border outline-offset-4 border-neutral-500 bg-white outline-neutral-500"
+      class="p-2 rounded-md border outline-offset-4 border-gray-500 bg-white outline-gray-500"
       name="email"
       id="email"
       type="email"
@@ -57,9 +57,9 @@ const { fields } = Astro.props;
     }
   </div>
   <div class="flex flex-col space-y-2">
-    <label for="message" class="text-neutral-500">Message</label>
+    <label for="message" class="text-gray-500">Message</label>
     <textarea
-      class="p-2 rounded-md border min-h-28 resize-y outline-offset-4 border-neutral-500 bg-white outline-neutral-500"
+      class="p-2 rounded-md border min-h-28 resize-y outline-offset-4 border-gray-500 bg-white outline-gray-500"
       name="message"
       id="message"
       placeholder="">{fields.message?.value || ""}</textarea
@@ -73,7 +73,7 @@ const { fields } = Astro.props;
     }
   </div>
   <input
-    class="transition-all hover:scale-105 shadow-lg sm:place-self-end px-8 py-4 hover:cursor-pointer rounded-md font-bold text-lg bg-neutral-700 text-white outline-offset-4 outline-neutral-500"
+    class="transition-all hover:scale-105 shadow-lg sm:place-self-end px-8 py-4 hover:cursor-pointer rounded-md font-bold text-lg bg-gray-700 text-white outline-offset-4 outline-gray-500"
     type="submit"
     value="Send"
     id="form-submit"
