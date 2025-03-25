@@ -1,5 +1,5 @@
 ---
-import Contact from "../components/Footer.astro";
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import { getContactFields } from "../utils";
 import Layout from "./Layout.astro";
@@ -16,6 +16,6 @@ const contactFields = getContactFields(Astro.url.searchParams);
       <slot />
     </div>
   </main>
-  <Contact fields={contactFields} />
+  <Footer fields={contactFields} />
 </Layout>
 <Navbar />
