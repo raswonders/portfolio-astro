@@ -6,6 +6,8 @@ import searchImage from "../../../assets/projects/1/search.webp";
 import checkInImage from "../../../assets/projects/1/check-in.webp";
 import radixIcon from "../../../assets/projects/1/radix.svg";
 import shadcnIcon from "../../../assets/projects/1/shadcn.svg";
+import Heading from "../../../components/ProjectHeading.astro";
+import Heading2 from "../../../components/ProjectSubheading.astro";
 ---
 
 <ProjectLayout id="1">
@@ -13,7 +15,7 @@ import shadcnIcon from "../../../assets/projects/1/shadcn.svg";
     <Image src={titleImage} alt="Member's table screenshot" />
   </div>
   <section class="space-y-8 max-w-prose">
-    <h1 class="text-3xl font-extrabold">Project's Goal</h1>
+    <Heading>Project's Goal</Heading>
     <p>
       Club 101 is a private nightclub in Rome, Italy. As a private club, all of
       its visitors must be registered members. Due to its recent rise in
@@ -25,8 +27,8 @@ import shadcnIcon from "../../../assets/projects/1/shadcn.svg";
 
   <section class="grid md:grid-cols-2 gap-y-16 md:gap-y-32 gap-x-8 items-start">
     <section class="order-1 md:order-2 space-y-4">
-      <h1 class="text-3xl font-extrabold">Challenges</h1>
-      <h2 class="text-xl font-extrabold">UI Design</h2>
+      <Heading>Challenges</Heading>
+      <Heading2>UI Design</Heading2>
       <p>
         From the start, it was clear that information clarity would be one of
         the top priorities. To achieve this, I decided to use <em>Shadcn/ui</em
@@ -60,7 +62,7 @@ import shadcnIcon from "../../../assets/projects/1/shadcn.svg";
     </div>
 
     <section class="order-3 space-y-4">
-      <h2 class="text-xl font-extrabold">Presenting Member Data</h2>
+      <Heading2>Presenting Member Data</Heading2>
       <p>
         The club is quite popular, already having a substantial database of over
         20,000 members. For each member, it has to manage detailed information,
@@ -84,7 +86,7 @@ import shadcnIcon from "../../../assets/projects/1/shadcn.svg";
     </div>
 
     <section class="order-5 md:order-6 space-y-4">
-      <h2 class="text-xl font-extrabold">Efficient Check-in</h2>
+      <Heading2>Efficient Check-in</Heading2>
       <p>
         During rush hour, the club often sees tens of visitors arriving
         simultaneously. They all need to go through the check-in process before
@@ -114,7 +116,7 @@ import shadcnIcon from "../../../assets/projects/1/shadcn.svg";
     </div>
   </section>
   <section class="space-y-8 max-w-prose">
-    <h1 class="text-3xl font-extrabold">Lessons Learned</h1>
+    <Heading>Lessons Learned</Heading>
     <div class="space-y-4">
       <p>
         Even though the project isn't finished yet, I already consider it a
