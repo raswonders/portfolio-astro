@@ -14,10 +14,10 @@ const { title, description } = project.data;
 <a
   target="_blank"
   href={`/projects/${projectId}`}
-  class="relative group w-full flex flex-col gap-y-4 bg-gray-200 rounded-xl max-w-4xl overflow-hidden border border-gray-400 outline-gray-500"
+  class="relative group w-full flex flex-col gap-y-4 bg-gray-200 rounded-xl max-w-4xl overflow-hidden border border-gray-300 outline-gray-500"
 >
   <div
-    class="absolute transition-opacity duration-300 inset-0 opacity-0 group-hover:opacity-100 bg-radial-[at_100%_0%] from-gray-50 to-gray-200 to-80%"
+    class="absolute transition-opacity duration-300 inset-0 opacity-0 group-hover:opacity-100 bg-radial-[at_100%_0%] from-white to-gray-200 to-80%"
   >
   </div>
   <div class="relative z-1 p-4 md:p-8">
@@ -29,8 +29,8 @@ const { title, description } = project.data;
       >
     </h3>
     <div class="mt-4 flex flex-col gap-y-3 max-w-prose">
-      <p class="text-gray-600">{description}</p>
-      <ul class="flex flex-wrap gap-x-2 text-gray-500 text-sm">
+      <p class="text-gray-500">{description}</p>
+      <ul class="flex flex-wrap gap-x-2 text-gray-600 text-sm">
         {
           project.data.stack.map((name: string) => {
             let nameJoined = name.replaceAll(" ", "");
