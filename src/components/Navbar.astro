@@ -41,26 +41,33 @@ import { Image } from "astro:assets";
 </nav>
 
 <script>
-  const navbar = document.getElementById("navbar");
-  const menuToggle = document.getElementById("menu-toggle");
-  const menuMobile = document.getElementById("menu-mobile");
+  let hasNavbarClickListener = false;
 
-  menuToggle?.addEventListener("click", () => {
-    menuMobile?.classList.toggle("hidden");
-  });
+  document.addEventListener("astro:page-load", () => {
+    const navbar = document.getElementById("navbar");
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuMobile = document.getElementById("menu-mobile");
 
-  menuMobile?.addEventListener("click", (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
+    menuToggle?.addEventListener("click", () => {
       menuMobile?.classList.toggle("hidden");
-    }
-  });
+    });
+    menuMobile?.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLAnchorElement) {
+        menuMobile?.classList.toggle("hidden");
+      }
+    });
 
-  window.addEventListener("click", (event) => {
-    if (!navbar || !menuMobile) return;
+    if (!hasNavbarClickListener) {
+      window.addEventListener("click", (event) => {
+        if (!navbar || !menuMobile) return;
 
-    const isInside = navbar.contains(event.target as Node);
-    if (!isInside) {
-      menuMobile.classList.add("hidden");
+        const isInside = navbar.contains(event.target as Node);
+        if (!isInside) {
+          menuMobile.classList.add("hidden");
+        }
+      });
+
+      hasNavbarClickListener = true;
     }
   });
 </script>
