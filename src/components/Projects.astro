@@ -15,17 +15,13 @@ const { projectId } = Astro.props;
 ---
 
 <section id="projects" class="flex flex-col items-center pt-44 space-y-16">
-  <h2 class="text-6xl/18 self-start">
-    {
-      projectId ? (
-        <div>Where To Next?</div>
-      ) : (
-        <div>
-          <div class="border-t-4">Latest</div>
-          <div>Work</div>
-        </div>
-      )
-    }
+  <!-- <h2 class="text-6xl/18 self-start"> -->
+  <h2
+    class="self-start w-[250px] md:w-[400px] text-4xl font-semibold md:font-medium md:text-6xl"
+  >
+    <div class="border-t-4 pt-2">
+      {projectId ? "Where To Next?" : (<>Latest <br /> Work</>)}
+    </div>
   </h2>
   <div
     class=`w-full flex flex-col gap-y-16 items-center tracking-wide leading-normal`
