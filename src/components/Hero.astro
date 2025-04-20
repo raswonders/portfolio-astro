@@ -13,9 +13,9 @@ const { class: className } = Astro.props;
 
 <section
   id="hero"
-  class={`h-screen pt-32 flex flex-col md:gap-4 md:flex-row justify-center md:items-center overflow-hidden ${className || ""}`}
+  class={`h-screen pt-32 grid md:grid-cols-2 items-center justify-items-center overflow-hidden ${className || ""}`}
 >
-  <Image class="w-full md:w-1/2" src={profile} alt="Rastislav's profile" />
+  <Image class="w-full max-w-[500px]" src={profile} alt="Rastislav's profile" />
   <div class="flex flex-col items-start gap-8">
     <Heading>
       <p class="font-serif italic font-normal">
