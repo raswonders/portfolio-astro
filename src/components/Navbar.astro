@@ -17,16 +17,21 @@ import MenuIcon from "./icons/MenuIcon.astro";
         <MenuIcon class="text-red-500" width={32} height={32} />
       </button>
       <menu class="hidden md:flex">
-        <a class="block p-2 rounded-md outline-gray-500 hover:text-slate-300" href="/#story">Story</a
+        <a
+          class="block p-2 rounded-md outline-gray-500 hover:text-slate-300"
+          href="/#story">Story</a
         >
-        <a class="block p-2 rounded-md outline-gray-500 hover:text-slate-300" href="/#toolkit"
-          >Toolkit</a
+        <a
+          class="block p-2 rounded-md outline-gray-500 hover:text-slate-300"
+          href="/#toolkit">Toolkit</a
         >
-        <a class="block p-2 rounded-md outline-gray-500 hover:text-slate-300" href="/#projects"
-          >Projects</a
+        <a
+          class="block p-2 rounded-md outline-gray-500 hover:text-slate-300"
+          href="/#projects">Projects</a
         >
-        <a class="block p-2 rounded-md outline-gray-500 hover:text-slate-300" href="#contact"
-          >Contact</a
+        <a
+          class="block p-2 rounded-md outline-gray-500 hover:text-slate-300"
+          href="#contact">Contact</a
         >
       </menu>
     </div>
@@ -40,26 +45,28 @@ import MenuIcon from "./icons/MenuIcon.astro";
 </nav>
 
 <script>
-  const navbar = document.getElementById("navbar");
-  const menuToggle = document.getElementById("menu-toggle");
-  const menuMobile = document.getElementById("menu-mobile");
+  document.addEventListener("astro:page-load", () => {
+    const navbar = document.getElementById("navbar");
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuMobile = document.getElementById("menu-mobile");
 
-  menuToggle?.addEventListener("click", () => {
-    menuMobile?.classList.toggle("hidden");
-  });
-
-  menuMobile?.addEventListener("click", (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
+    menuToggle?.addEventListener("click", () => {
       menuMobile?.classList.toggle("hidden");
-    }
-  });
+    });
 
-  window.addEventListener("click", (event) => {
-    if (!navbar || !menuMobile) return;
+    menuMobile?.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLAnchorElement) {
+        menuMobile?.classList.toggle("hidden");
+      }
+    });
 
-    const isInside = navbar.contains(event.target as Node);
-    if (!isInside) {
-      menuMobile.classList.add("hidden");
-    }
+    window.addEventListener("click", (event) => {
+      if (!navbar || !menuMobile) return;
+
+      const isInside = navbar.contains(event.target as Node);
+      if (!isInside) {
+        menuMobile.classList.add("hidden");
+      }
+    });
   });
 </script>
